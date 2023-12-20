@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patents/Copyrights</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #333; /* Darker background */
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #444; /* Darker background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 16px;
+            font-weight: bold;
+            outline: none;
+            border: 2px solid #4CAF50; /* Green */
+            position: relative;
+        }
+
+        button:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        button:hover {
+            transform: translate(0, -5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .subheading-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .video {
+            flex: 1;
+            max-width: 100%;
+        }
+
+        .intro-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .intro-container p {
+            font-size: 18px;
+        }
+
+        /* Add more styles as needed */
+
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+
+            .subheading-container {
+                flex-direction: column;
+            }
+
+            .content,
+            .video {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Patents</h1>
+    </header>
+
+    <button-container>
+           <button onclick="window.location.href='{{ url_for('home') }}'">Home</button>
+            <button onclick="window.location.href='{{ url_for('work') }}'">Work Experience</button>
+            <button onclick="window.location.href='{{ url_for('research') }}'">Research & Teaching Experience</button>
+            <button onclick="window.location.href='{{ url_for('projects') }}'">Projects</button>
+            <button onclick="window.location.href='{{ url_for('patents') }}'">Patents</button>
+    </button-container>
+
+    <section>
+        <div class="intro-container">
+            <p> 
+                Check out my <a href="https://keshavbharadwaj.github.io/patents/" style="color: #3498db;">Patent/Copyright Certifications</a>.
+            </p>
+        </div>
+
+        <div class="subheading-container">
+            <div class="content">
+                <h2>Q-CerGen (Quick Certificate Generator)</h2>
+                <p>
+                    <ul>
+                      <li>A novel application to generate a substantial number of E-certificates quickly provided an Excel file and certificate template.</li>
+                      <li>Developed code using OpenCV and designed an innovative user interface using Tkinter, and Python.</li>
+                      <li>Created Q-CerGen website using Flask and also created 3D E-trophies for participants using Brython and webGL.</li>
+                    </ul>
+
+
+
+                </p>
+            </div>
+            <div class="video">
+                <!-- Replace the video URL with your actual video embed code -->
+                <iframe width="480" height="315" src="https://www.youtube.com/embed/YXbtbqGVAAo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="subheading-container">
+            <div class="content">
+                <h2>ADAM (Automatic Disassemble and Assemble Machine)</h2>
+                <p>
+                    <ul>
+                      <li>A robotic pick-and-place arm prototype capable of disassembling a pattern constructed from basic blocks or units and reassembling it in a different location.</li>
+                      <li>Developed code for object recognition as well as pattern mapping utilizing the SIFT algorithm to map various blocks forming a given
+                        pattern dynamically.</li>
+                      <li>Designed a 3D GUI for customizing patterns using OpenGL, and Python.</li>
+                      <li>Implemented a machine leanring model to analyze the structural stability of a given pattern.</li>
+                    </ul>
+
+
+
+                </p>
+            </div>
+            <div class="video">
+                <!-- Replace the video URL with your actual video embed code -->
+                <iframe width="480" height="315" src="https://www.youtube.com/embed/_Rwc4v6Phj4?si=61_0K6EoGZD2AQur" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add more sections for additional patents -->
+
+</body>
+</html>

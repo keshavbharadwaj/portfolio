@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #333; /* Darker background */
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+         .subheading-container h2 {
+            text-decoration: underline;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #444; /* Darker background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 16px;
+            font-weight: bold;
+            outline: none;
+            border: 2px solid #4CAF50; /* Green */
+            position: relative;
+        }
+
+        button:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        button:hover {
+            transform: translate(0, -5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .subheading-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .links {
+            margin-top: 10px;
+        }
+
+        .intro-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .intro-container p {
+            font-size: 18px;
+        }
+
+        .fa-icon {
+            margin-right: 5px;
+        }
+
+        /* Style for hyperlinks */
+        a {
+            color: #3498db; /* Dark blue color for hyperlinks */
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Projects</h1>
+    </header>
+
+    <button-container>
+        <button onclick="window.location.href='{{ url_for('home') }}'">Home</button>
+        <button onclick="window.location.href='{{ url_for('work') }}'">Work Experience</button>
+        <button onclick="window.location.href='{{ url_for('research') }}'">Research & Teaching Experience</button>
+        <button onclick="window.location.href='{{ url_for('projects') }}'">Projects</button>
+        <button onclick="window.location.href='{{ url_for('patents') }}'">Patents</button>
+    </button-container>
+
+    <section>
+        <div class="intro-container">
+            <p>
+                Explore my projects and contributions. Each project includes links to the GitHub repository and related PDF documentation.
+            </p>
+        </div>
+
+        <!-- Project 1 -->
+        <div class="subheading-container">
+            <div class="content">
+                <h2>1. SegMask Frustum-PointPillars for 3D Object Detection</h2>
+
+                 <p>Aim: <span style="font-weight: bold;">Model to predicts 3D bounding box cordinates for cars given RGB image and pointcloud data.</span></p>
+                <p>
+                <ul>
+                      <li>Modified the existing Frustum-PointPillars architecture which uses images and point-cloud data (sensor fusion camera and LiDAR) by
+replacing the Gaussian mask with a segmentation mask and achieved a mAP score of 78.01 for cars class in the KITTI-Hard dataset.</li>
+                      <li>Established a real-time detection by adding a YOLOv7 2D detection layer instead of using KITTI ground truths.</li>
+                </ul>
+
+
+                </p>
+                <p>Course: <span style="font-weight: bold;"><i> Advanced Computer Vision </i> </span></p>
+                <p>University: <span style="font-weight: bold;">Northeastern University</span></p>
+                <div class="links">
+                      <a href="https://github.com/keshavbharadwaj/frustum_pointnets_pytorch" target="_blank">
+                        <img src="{{ url_for('static', filename='images/github_logo_2.png') }}"  alt="github logo" height="20">
+                        Github
+                    </a>
+
+                   <a href="{{url_for('static', filename='documents/seg_mask_frustum_point_pillar.pdf') }}" target="_blank">
+                        <img src="{{ url_for('static', filename='images/pdf_logo.png') }}"  alt="github logo" height="20">
+                        Report
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="subheading-container">
+            <div class="content">
+                <h2>2. Visual Question Answering,</h2>
+
+                 <p>Aim: <span style="font-weight: bold;">Model predicts answers, given an image and a natural language question based on the image.</span></p>
+                <p>
+                <ul>
+                      <li>Achieved 57% accuracy with the baseline LSTM Question + norm image model with a VGGnet image embedding</li>
+                      <li>Achieved 70.68% accuracy with the transformer-based LXMERT model for visual question answering on the VQA dataset.</li>
+                </ul>
+
+
+                </p>
+                <p>Course: <span style="font-weight: bold;"><i> Deep Learning </i> </span></p>
+                <p>University: <span style="font-weight: bold;">Northeastern University</span></p>
+                <div class="links">
+                      <a href="https://github.com/keshavbharadwaj/Visual-Question-Answering" target="_blank">
+                        <img src="{{ url_for('static', filename='images/github_logo_2.png') }}" alt="github logo" height="20">
+                        Github
+                    </a>
+
+                   <a href="{{url_for('static', filename='documents/deep_learning_report.pdf') }}" target="_blank">
+                        <img src="{{ url_for('static', filename='images/pdf_logo.png') }}" alt="github logo" height="20">
+                        Report
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Project 3 -->
+     <div class="subheading-container">
+            <div class="content">
+                <h2>3. Question Answering System</h2>
+
+                 <p>Aim: <span style="font-weight: bold;">Model predicts answers, given a natural language question and context.</span></p>
+                <p>
+                <ul>
+                      <li>Achieved a 63.5% accuracy and 66.7 F1-score with the baseline Seq2seq LSTM model on SQuAD2.0.</li>
+                      <li>Achieved 77.3% accuracy with Distilled BERT, achieving an 85.4 F1-score for question-answering tasks.</li>
+                </ul>
+
+
+                </p>
+                <p>Course: <span style="font-weight: bold;"><i> Natural Language Processing </i> </span></p>
+                <p>University: <span style="font-weight: bold;">Northeastern University</span></p>
+                <div class="links">
+                      <a href="https://github.com/keshavbharadwaj/NLP_QA_CourseProject" target="_blank">
+                        <img src="{{ url_for('static', filename='images/github_logo_2.png') }}" alt="github logo" height="20">
+                        Github
+                    </a>
+
+                   <a href="{{url_for('static', filename='documents/Question Answering System.pdf') }}" target="_blank">
+                        <img src= "{{ url_for('static', filename='images/pdf_logo.png') }}" alt="github logo" height="20">
+                        Report
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+</body>
+</html>

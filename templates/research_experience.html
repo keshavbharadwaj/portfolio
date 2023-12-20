@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research and Teaching Experiences</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #333; /* Darker background */
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #444; /* Darker background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 16px;
+            font-weight: bold;
+            outline: none;
+            border: 2px solid #4CAF50; /* Green */
+            position: relative;
+        }
+
+        button:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        button:hover {
+            transform: translate(0, -5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .subheading-container {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start; /* Align items at the start (top) */
+        }
+
+        .logo {
+            width: 80px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 20px; /* Adjust the spacing between the logo and text */
+            float: right; /* Float the logo to the left */
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .title-duration {
+            margin-bottom: 20px;
+        }
+
+        .intro-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .intro-container p {
+            font-size: 18px;
+        }
+
+        /* Style for hyperlinks */
+        a {
+            color: #3498db; /* Dark blue color for hyperlinks */
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Research and Teaching Experiences</h1>
+    </header>
+
+    <button-container>
+         <button onclick="window.location.href='{{ url_for('home') }}'">Home</button>
+        <button onclick="window.location.href='{{ url_for('work') }}'">Work Experience</button>
+        <button onclick="window.location.href='{{ url_for('research') }}'">Research & Teaching Experience</button>
+        <button onclick="window.location.href='{{ url_for('projects') }}'">Projects</button>
+        <button onclick="window.location.href='{{ url_for('patents') }}'">Patents</button>
+        
+    </button-container>
+
+    <section>
+        <div class="intro-container">
+            <p>
+                Explore my research and teaching experiences. Each section includes details about the role and responsibilities.
+            </p>
+        </div>
+
+
+
+        <!-- Research Experience 2 -->
+        <div class="subheading-container">
+            <div class="content">
+                <h2>Graduate Research Assistant</h2>
+                 <img src="{{ url_for('static', filename='images/neu_logo.png') }}" alt="Company Logo 1" class="logo" class="float-left">
+                <div class="title-duration">
+                    <p>Location: <span style="font-weight: bold;">Northeastern University</span></p>
+                    <p>Duration: <span style="font-weight: bold;">September 8th 2023- December 8th 2023</span></p>
+                </div>
+                <p>
+                    <ul>
+                      <li>Enhancing COBRA (Crater Observing Bio-inspired Rolling Articulator) by incorporating deep learning methods for object detection
+(YOLO) and semantic segmentation (Autoencoder) to improve its autonomy during lunar exploration.Supervised by Prof. Alireza Ramezani</li>
+
+                      <li>Working to deploy vision models to edge devices by utilizing network quantization and hardware-specific optimizations using OpenVINO
+and TensorRT with CUDA support for NVIDIA Jetson Orin</li>
+                    </ul>
+                </p>
+                <div class="links">
+                      <a href="https://github.com/keshavbharadwaj/COBRA" target="_blank">
+                        <img src="{{ url_for('static', filename='images/github_logo_2.png') }}" alt="github logo" height="20">
+                        Github
+                    </a>
+
+                   <a href="{{url_for('static', filename='documents/COBRA_final_report.pdf') }}" target="_blank">
+                        <img src="{{ url_for('static', filename='images/pdf_logo.png') }}" alt="github logo" height="20">
+                        Report
+                    </a>
+                </div>
+             
+            </div>
+        </div>
+
+        <!-- Teaching Experience 1 -->
+        <div class="subheading-container">
+            <div class="content">
+                <h2>Graduate Teaching Assistant</h2>
+                <img src="{{ url_for('static', filename='images/neu_logo.png') }}" alt="Company Logo 1" class="logo" class="float-left">
+               <div class="title-duration">
+                    <p>Location: <span style="font-weight: bold;">Northeastern University</span></p>
+                    <p>Duration: <span style="font-weight: bold;">May 2022 - December 2022</span></p>
+                </div>
+                <p>
+                    <ul>
+                      <li>Revised the lab manual through the adaptation of experiments to support the new RISC-V architecture and System Verilog. Supervised by Prof.Miriam Leeser, Prof. Emad Abolela and Prof. Tom Consi </li>
+
+                      <li>Developed a computer architecture featuring an ALU, Instruction Decoder, and Memory, tailored for the RISC-V reduced instruction set.</li>
+                      <li>Assisted in debugging Verilog code using Xilinx Vivado. Monitored and supported students in lab sessions</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Teaching Experience 2 -->
+      
+    </section>
+
+</body>
+</html>
