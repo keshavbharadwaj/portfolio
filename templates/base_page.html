@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keshav Bharadwaj Vaidyanathan - Portfolio</title>
+    <title>Keshav Bharadwaj Vaidyanathan</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #333; /* Darker background */
+            background-image: url("{{ url_for('static', filename='images/background.gif') }}"); ; 
             color: #fff;
         }
 
+
+
         header {
+
             text-align: center;
-            padding: 40px 20px;
-            background-color: #4CAF50; /* Green */
+            padding: 10px 10px;
+            /*background-color: #4CAF50; /* Green */
             color: #fff;
         }
 
@@ -40,25 +43,35 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 30px;
-            background-color: #444; /* Darker background */
+            /*background-color: #444; /* Darker background */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
         }
 
         img {
-            max-width: 200px; /* Adjust the size as needed */
+            max-width: 290px; /* Adjust the size as needed */
             height: auto;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 4px solid #4CAF50; /* Green */
+            margin-right: 10px;
+            /*border-radius: 50%; */
+            margin-bottom: 10px;
+            border: 0px solid #4CAF50; /* Green */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         img.logo {
             max-width: 40px; /* Adjust the size as needed */
             max-height: 40px; /* Adjust the size as needed */
-            margin-bottom: 10px;
+            margin-bottom: 2px;
+        }
+
+        .bottom-right-links {
+            position: absolute;
+            bottom:5px;
+            right: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
 
         button-container {
@@ -68,43 +81,57 @@
             margin-top: 20px;
         }
 
-        button {
-            background-color: #4CAF50; /* Green */
-            color: #fff;
-            padding: 10px 30px;
-            border: none;
-            border-radius: 5px;
-            margin: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-size: 14px;
-            font-weight: bold;
-            outline: none;
-            border: 2px solid #4CAF50; /* Green */
+        .content-section {
+            display: flex;
+            align-items: top;
+            justify-content: center;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
+            margin-right: 90px;
+            margin-left : 5px;
+        }
+
+
+
+          .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: relative;
         }
 
-        button:after {
-            content: '';
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            right: 6px;
-            bottom: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            pointer-events: none;
-            z-index: -1;
+        .rhombus {
+            width: 90px;
+            height: 140px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 20px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        button:hover {
-            transform: translate(0, -5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
         }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 14px;
+        }
+
 
 
         a:link, a:visited{
-  padding: 15px 25px;
+  padding: 10px 10px;
   text-align: center;
   text-decoration: none;
   color: red;
@@ -121,47 +148,229 @@
 
 
         }
+
+
+
+
+
+        @media only screen and (max-width: 600px){
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url("{{ url_for('static', filename='images/background.gif') }}");  
+            color: #fff;
+            background-size:100%;
+        }   
+
+        
+
+        header {
+
+            text-align: center;
+            padding: 2px 2px;
+            /*background-color: #4CAF50; /* Green */
+            color: #fff;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        header p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1px;
+        }
+
+        header p a {
+            margin: 0 1px;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 1px auto;
+            padding: 1px;
+            /*background-color: #444; /* Darker background */
+            border-radius: 1px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+        }
+
+        img {
+            max-width: 250px; /* Adjust the size as needed */
+            max-height: 250px;
+            margin-right: 5px;
+            /*border-radius: 50%; */
+            margin-bottom: 10px;
+            border: 0px solid #4CAF50; /* Green */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img.logo {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+        }
+
+        .bottom-right-links {
+            position: absolute;
+            bottom:5px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .content-section {
+            display: flex;
+            align-items: top;
+            justify-content: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
+            margin-right: 5px;
+            margin-left : 5px;
+            margin-top: 10px;
+            font-size: 10px;
+        }
+
+
+
+          .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 43px;
+            height: 72px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 8px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 8.6px;
+        }
+
+
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+}
+
+        /* Add more styles as needed */
+
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+
+
+
+        }
+
+
+
     </style>
 </head>
 <body>
-
-    <header>
+        <header>
+    
         <h1>Keshav Bharadwaj Vaidyanathan</h1>
-        <p>
-            <a href="https://www.linkedin.com/in/keshav-bharadwaj/" target="_blank"><img class="logo" src="{{ url_for('static', filename='images/linkedin_logo.png') }}" alt="LinkedIn Logo"></a>
-            <a href="https://github.com/keshavbharadwaj" target="_blank"><img class="logo" src="{{ url_for('static', filename='images/github_logo.png') }}" alt="GitHub Logo"></a>
-            <a href="mailto:bharadwajvaidyanat.k@northeastern.edu"><img class="logo" src="{{ url_for('static', filename='images/email_logo.jpg') }}" alt="{{ url_for('static', filename='images/email_logo.png') }}"></a>
-        </p>
-        <img src="{{ url_for('static', filename='images/dp.png') }}" alt="Your Circular Photo Placeholder">
+         
+          <div class="rhombus-container" >
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
+                <div class="rhombus-text">Home</div>
+            </div>
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='{{ url_for('work') }}'">
+                <div class="rhombus-text">Work Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='{{ url_for('research') }}'">
+                <div class="rhombus-text">Research & Teaching Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='{{ url_for('projects') }}'">
+                <div class="rhombus-text">Projects</div>
+            </div>
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='{{ url_for('patents') }}'">
+                <div class="rhombus-text">Patents</div>
+            </div>
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='{{ url_for('education') }}'">
+                <div class="rhombus-text">Education</div>
+            </div>
+        </div>
+       
     </header>
 
-    <section>
-        <p>
-           
-Welcome to my portfolio, where technology meets innovation, and a passion for solving complex challenges drives my journey. As a highly motivated and results-driven Computer Engineer with a Master's degree in Computer Engineering, my expertise spans the realms of data science, machine learning, computer vision, and robotics. With hands-on experience as a Data Science Co-op at Abiomed Inc (Johnson & Johnson) and a Machine Learning Engineer at Mad Street Den, I have honed my skills in developing predictive models, optimizing algorithms, and contributing to cutting-edge technologies. 
+   <div class="content-section">
+        <img  src="{{ url_for('static', filename='images/dp_painted.png')}}" alt="Your Circular Photo Placeholder" alt="Section Image">
+        <div class="content">
+            <p> Welcome to my portfolio, where technology meets innovation, and a passion for solving complex challenges drives my journey. As a highly motivated and results-driven Computer Engineer with a Master's degree in Computer Engineering, my expertise spans the realms of data science, machine learning, computer vision, and robotics. With hands-on experience as a Data Science Co-op at Abiomed Inc (Johnson & Johnson) and a Machine Learning Engineer at Mad Street Den, I have honed my skills in developing predictive models, optimizing algorithms, and contributing to cutting-edge technologies. </p>
+            <!-- Add more content as needed -->
+
+               <div class="bottom-right-links">
+                <p>
+                 <a href="https://www.linkedin.com/in/keshav-bharadwaj/" target="_blank"><img class="logo" src=  "{{ url_for('static', filename='images/linkedin_logo.png')}}"  alt="LinkedIn Logo"></a>
+            <a href="https://github.com/keshavbharadwaj" target="_blank"><img class="logo" src="{{ url_for('static', filename='images/github_logo.png')}}" alt="GitHub Logo"></a>
+            <a href="mailto:bharadwajvaidyanat.k@northeastern.edu"><img class="logo" src="{{ url_for('static', filename='images/email_logo.jpg')}}" alt="{{ url_for('static', filename='images/email_logo.png') }}"></a>
         </p>
+                </div>
 
-         <div class="links">
-               <a href="{{url_for('static', filename='documents/Resume.pdf') }}" target="_blank">
-                    <img class="logo" src= "{{ url_for('static', filename='images/pdf_logo.png') }}" alt="github logo" height="10">
-                    Resume
-                </a>
-                 <a href="{{url_for('static', filename='documents/final_transcript.pdf') }}" target="_blank">
-                    <img class="logo" src= "{{ url_for('static', filename='images/pdf_logo.png') }}" alt="github logo" height="10">
-                    <b>Transcript</b>
-                </a>
-            </div>
-
-        <div class="button-container">
-            <button onclick="window.location.href='{{ url_for('home') }}'">Home</button>
-            <button onclick="window.location.href='{{ url_for('work') }}'">Work Experience</button>
-            <button onclick="window.location.href='{{ url_for('research') }}'">Research & Teaching Experience</button>
-            <button onclick="window.location.href='{{ url_for('projects') }}'">Projects</button>
-            <button onclick="window.location.href='{{ url_for('patents') }}'">Patents</button>
+         
+   
+    
         </div>
-    </section>
+        
+
+
+        
+        
+
+
+
+    </div>
+
+
+
+
+
+    
 
     <!-- Add more sections for Work Experience, Projects, Patents, Technical Skills, etc. -->
 
 </body>
+
+
 </html>

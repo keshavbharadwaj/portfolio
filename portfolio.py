@@ -26,5 +26,41 @@ def projects():
 def patents():
     return render_template('patents.html')
 
+@app.route('/education')
+def education():
+    return render_template('education.html')
+
+@app.route('/abiomed')
+def abiomed():
+    return render_template('abiomed.html')
+
+@app.route('/msd')
+def msd():
+    return render_template('mad_street_den.html')
+
+@app.route('/graduate_research')
+def graduate_research():
+    return render_template('graduate_research.html')
+
+@app.route('/teaching_assistant')
+def teaching_assistant():
+    return render_template('teaching.html')
+
+
+@app.route('/seg_mask')
+def seg_mask():
+    return render_template('segmask_topic.html')
+
+@app.route('/vqa')
+def vqa():
+    return render_template('vqa_topic.html')
+
+@app.route('/qa')
+def qa():
+    return render_template('qa_topic.html')
+
+
+
 if __name__ == '__main__':
-    app.run(debug=False,host="0.0.0.0",port=5000)
+    app.run(debug=True,host="0.0.0.0",port=5000)
+
