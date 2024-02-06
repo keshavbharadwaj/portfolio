@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keshav Bharadwaj Vaidyanathan - Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('../images/background.png'); 
+            background-color: #333; /* Darker background */
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+        }
+
+        header h1 a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        header p a {
+            margin: 0 10px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #444; /* Darker background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 200px; /* Adjust the size as needed */
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #4CAF50; /* Green */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img.logo {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 10px;
+        }
+
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 14px;
+            font-weight: bold;
+            outline: none;
+            border: 2px solid #4CAF50; /* Green */
+            position: relative;
+        }
+
+        button:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        button:hover {
+            transform: translate(0, -5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+
+        a:link, a:visited{
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+
+
+        /* Add more styles as needed */
+
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+
+
+
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Keshav Bharadwaj Vaidyanathan</h1>
+        <p>
+            <a href="https://www.linkedin.com/in/keshav-bharadwaj/" target="_blank"><img class="logo" src="{{ url_for('static', filename='images/linkedin_logo.png') }}" alt="LinkedIn Logo"></a>
+            <a href="https://github.com/keshavbharadwaj" target="_blank"><img class="logo" src="{{ url_for('static', filename='images/github_logo.png') }}" alt="GitHub Logo"></a>
+            <a href="mailto:bharadwajvaidyanat.k@northeastern.edu"><img class="logo" src="{{ url_for('static', filename='images/email_logo.jpg') }}" alt="{{ url_for('static', filename='images/email_logo.png') }}"></a>
+        </p>
+        <img src="{{ url_for('static', filename='../images/dp.png') }}" alt="Your Circular Photo Placeholder">
+    </header>
+
+    <section>
+        <p>
+           
+Welcome to my portfolio, where technology meets innovation, and a passion for solving complex challenges drives my journey. As a highly motivated and results-driven Computer Engineer with a Master's degree in Computer Engineering, my expertise spans the realms of data science, machine learning, computer vision, and robotics. With hands-on experience as a Data Science Co-op at Abiomed Inc (Johnson & Johnson) and a Machine Learning Engineer at Mad Street Den, I have honed my skills in developing predictive models, optimizing algorithms, and contributing to cutting-edge technologies. 
+        </p>
+
+         <div class="links">
+               <a href="{{url_for('static', filename='documents/Resume.pdf') }}" target="_blank">
+                    <img class="logo" src= "{{ url_for('static', filename='images/pdf_logo.png') }}" alt="github logo" height="10">
+                    Resume
+                </a>
+                 <a href="{{url_for('static', filename='documents/final_transcript.pdf') }}" target="_blank">
+                    <img class="logo" src= "{{ url_for('static', filename='images/pdf_logo.png') }}" alt="github logo" height="10">
+                    <b>Transcript</b>
+                </a>
+            </div>
+
+        <div class="button-container">
+            <button onclick="window.location.href='{{ url_for('home') }}'">Home</button>
+            <button onclick="window.location.href='{{ url_for('work') }}'">Work Experience</button>
+            <button onclick="window.location.href='{{ url_for('research') }}'">Research & Teaching Experience</button>
+            <button onclick="window.location.href='{{ url_for('projects') }}'">Projects</button>
+            <button onclick="window.location.href='{{ url_for('patents') }}'">Patents</button>
+        </div>
+    </section>
+
+    <!-- Add more sections for Work Experience, Projects, Patents, Technical Skills, etc. -->
+
+</body>
+</html>

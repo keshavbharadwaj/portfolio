@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduate Research Experience</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url("{{ url_for('static', filename='images/background.gif')}}");
+            color: #fff;
+        }
+
+
+        header {
+
+            text-align: center;
+            padding: 10px 10px;
+            /*background-color: #4CAF50; /* Green */
+            color: #fff;
+        }
+
+        header h1 a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        header p a {
+            margin: 0 10px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            /*background-color: #444; /* Darker background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+      
+        .container {
+                display: flex;
+                gap: 50px; /* Adjust the gap between image container and content */
+                padding: 2px; /* Padding around the container */
+                justify-content: center;
+                
+
+            }
+
+           .stacked-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+  
+        .image-container {
+            display: flex;
+            gap: 20px; /* Adjust the gap between images */
+      
+            
+           
+
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Adjust the styles as needed */
+
+        img {
+              padding: 3px; /* Adjust padding as needed */
+             max-width: 600px; /* Adjust the size as needed */
+            height: auto;
+        
+
+        }
+        .specific-logo{
+             max-width: 2px; /* Adjust the size as needed */
+            height: auto;
+            margin-bottom: 10px; /* Adjust the margin between images */
+        }
+
+           .specific-image {
+            /* Specific styling for the image with class "specific-image" */
+           
+            padding: 3px; /* Adjust padding as needed */
+             max-width: 250px; /* Adjust the size as needed */
+            height: auto;
+         
+        }
+
+        .specific-image2 {
+            /* Specific styling for the image with class "specific-image" */
+           
+            padding: 3px; /* Adjust padding as needed */
+             max-width: 150px; /* Adjust the size as needed */
+            height: auto;
+         
+        }
+
+        .specific-image3 {
+            /* Specific styling for the image with class "specific-image" */
+           
+            padding: 3px; /* Adjust padding as needed */
+             max-width: 180px; /* Adjust the size as needed */
+            height: auto;
+         
+          
+        }
+
+
+        .content{
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .title-duration {
+            margin-bottom: 20px;
+        }
+
+
+        /* Delay each image by adding animation delay */
+        .fade-in:nth-child(1) { animation-delay: 0.5s; }
+        
+
+  
+        
+    
+
+
+          .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 90px;
+            height: 140px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 20px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .links {
+            margin-top: 10px;
+        }
+           img.logo {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+        }
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+
+
+        /* Add more styles as needed */
+
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+
+   @media only screen and (max-width: 600px){
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url("{{ url_for('static', filename='images/background.gif') }}");  
+            color: #fff;
+            background-size:100%;
+        }   
+
+        
+
+        header {
+
+            text-align: center;
+            padding: 2px 2px;
+            /*background-color: #4CAF50; /* Green */
+            color: #fff;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 10px;
+            text-decoration: none;
+            font-size: 10px;
+        }
+
+        header p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1px;
+        }
+
+        header p a {
+            margin: 0 1px;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 1px auto;
+            padding: 1px;
+            /*background-color: #444; /* Darker background */
+            border-radius: 1px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+        }
+
+        .specific-image {
+            /* Specific styling for the image with class "specific-image" */
+           
+            padding: 3px; /* Adjust padding as needed */
+             max-width: 150px; /* Adjust the size as needed */
+            height: auto;
+         
+        }
+
+        .specific-image2 {
+            /* Specific styling for the image with class "specific-image" */
+           
+            padding: 3px; /* Adjust padding as needed */
+             max-width: 100px; /* Adjust the size as needed */
+            height: auto;
+         
+        }
+
+        .specific-image3 {
+            /* Specific styling for the image with class "specific-image" */
+           
+            padding: 3px; /* Adjust padding as needed */
+             max-width: 120px; /* Adjust the size as needed */
+            height: auto;
+         
+          
+        }
+        img {
+              padding: 3px; /* Adjust padding as needed */
+             max-width: 400px; /* Adjust the size as needed */
+            height: auto;
+        
+
+        }
+        .bottom-right-links {
+            position: absolute;
+            bottom:5px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+            .content{
+         
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 8.6px;
+
+        }
+
+           .container {
+                display: flex;
+                gap: 10px; /* Adjust the gap between image container and content */
+                padding: 2px; /* Padding around the container */  
+                flex-direction: column;  
+
+            }
+        .content-section {
+            display: flex;
+            align-items: top;
+            justify-content: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
+            margin-right: 5px;
+            margin-left : 5px;
+            margin-top: 10px;
+            font-size: 10px;
+        }
+
+
+
+
+          .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 43px;
+            height: 72px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 8px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 8.6px;
+        }
+
+
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+}
+
+        /* Add more styles as needed */
+
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+
+
+
+
+
+        }
+    </style>
+</head>
+<body>
+        <header>
+    
+        <h1>Graduate Research Experience Silicon Synapse Lab</h1>
+         
+   <div class="rhombus-container" >
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
+                <div class="rhombus-text">Home</div>
+            </div>
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='{{ url_for('work') }}'">
+                <div class="rhombus-text">Work Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='{{ url_for('research') }}'">
+                <div class="rhombus-text">Research & Teaching Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='{{ url_for('projects') }}'">
+                <div class="rhombus-text">Projects</div>
+            </div>
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='{{ url_for('patents') }}'">
+                <div class="rhombus-text">Patents</div>
+            </div>
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='{{ url_for('education') }}'">
+                <div class="rhombus-text">Education</div>
+            </div>
+        </div>
+       
+    </header>
+
+    <div class= "fade-in">
+    <div class="container">
+
+      <div class="image-container">
+
+         
+            <div class="fade-in">
+                <img class = "specific-image" src="{{ url_for('static', filename='images/cobra2.png')}}" alt="Image 1">
+                
+                <img class = "specific-image2" src="{{ url_for('static', filename='images/real_sense.jpg')}}"  alt="Image 2">
+                <img class = "specific-image3" src="{{ url_for('static', filename='images/nvidia_orin.jpg')}}" alt="Image 3">
+                 <img  src="{{ url_for('static', filename='images/cobra_model.png')}}" alt="Image 4"> 
+               
+                
+            </div>
+
+
+
+            
+      
+    </div>
+
+  
+    <div class="content">
+                <p>
+                <ul>
+                      <li>Enhancing COBRA (Crater Observing Bio-inspired Rolling Articulator) by incorporating deep learning methods for object detection (YOLO) and semantic segmentation (Autoencoder) to improve its autonomy during lunar exploration.</li>
+                      <li>Working to deploy vision models to edge devices by utilizing network quantization and hardware-specific optimizations using OpenVINO and TensorRT with CUDA support for NVIDIA Jetson Orin</li>
+                      <li>Techinical stack :- Python, Pytorch, OpenCV, ROS, TensorRT, OpenVINO, Label-Studio, pandas, Linux, Github, Jupyter notebook</li>
+                </ul>
+                </p>
+                <p>Location: <span style="font-weight: bold;"><i> Northeastern University </i> </span></p>
+                <p>Duration: <span style="font-weight: bold;">September 8th 2023- December 8th 2023</span></p>
+
+
+                
+                 <div class="links">
+                      <a href="https://github.com/keshavbharadwaj/COBRA" target="_blank">
+                        <img class="logo" src="{{ url_for('static', filename='images/github_logo_2.png') }}" alt="github logo" height="20">
+                        Github
+                    </a>
+
+                   <a href="{{url_for('static', filename='documents/COBRA_final_report.pdf') }}" target="_blank">
+                        <img class= "logo" src="{{ url_for('static', filename='images/pdf_logo.png') }}" alt="github logo" height="20">
+                        Report
+                    </a>
+                </div>
+             </div>
+    </div>
+</div>
+
+
+
+
+</body>
+
+
+</html>
