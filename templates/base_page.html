@@ -23,6 +23,10 @@
             color: #fff;
         }
 
+       
+
+     
+           
         header h1 a {
             color: #fff;
             text-decoration: none;
@@ -53,6 +57,7 @@
             max-width: 290px; /* Adjust the size as needed */
             height: auto;
             margin-right: 10px;
+            justify-content: center;
             /*border-radius: 50%; */
             margin-bottom: 10px;
             border: 0px solid #4CAF50; /* Green */
@@ -63,12 +68,21 @@
             max-width: 40px; /* Adjust the size as needed */
             max-height: 40px; /* Adjust the size as needed */
             margin-bottom: 2px;
+            display:inline-block;
+        }
+
+          img.logo2 {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+            display:inline-block;
+            filter:invert(1);
         }
 
         .bottom-right-links {
-            position: absolute;
-            bottom:5px;
-            right: 100px;
+            position: flex;
+            bottom:1px;
+            right: 10px;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
@@ -79,16 +93,19 @@
             justify-content: space-evenly;
             flex-wrap: wrap;
             margin-top: 20px;
+
         }
 
         .content-section {
             display: flex;
-            align-items: top;
+            align-items: center;
+            flex-direction: column;
             justify-content: center;
             padding: 40px;
             background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
             margin-right: 90px;
             margin-left : 5px;
+
         }
 
 
@@ -140,20 +157,38 @@
 
         /* Add more styles as needed */
 
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
+     .neon-light {
+      position: relative;
+      display: inline-block;
+      margin: 20px;
+    }
+
+    .neon-light img {
+      max-width: 100px;
+      height: auto;
+      display: block;
+    }
+
+    .neon-light::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      background: linear-gradient(45deg, #009688, #4CAF50);
+      z-index: -1;
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .neon-light:hover::before {
+      opacity: 1;
+    }
 
 
-
-        }
-
-
-
-
-
-        @media only screen and (max-width: 600px){
+ @media only screen and (max-width: 600px){
         body {
             margin: 0;
             padding: 0;
@@ -162,6 +197,10 @@
             color: #fff;
             background-size:100%;
         }   
+
+               figure {
+      text-align: center;
+    }
 
         
 
@@ -211,13 +250,13 @@
         }
 
         img.logo {
-            max-width: 40px; /* Adjust the size as needed */
-            max-height: 40px; /* Adjust the size as needed */
+            max-width: 20px; /* Adjust the size as needed */
+            max-height: 20px; /* Adjust the size as needed */
             margin-bottom: 2px;
         }
 
         .bottom-right-links {
-            position: absolute;
+            position: flex;
             bottom:5px;
             right: 10px;
             display: flex;
@@ -241,7 +280,8 @@
             margin-right: 5px;
             margin-left : 5px;
             margin-top: 10px;
-            font-size: 10px;
+            font-size: 13px;
+
         }
 
 
@@ -288,19 +328,8 @@
   text-align: center;
   text-decoration: none;
   color: red;
+    }
 }
-}
-
-        /* Add more styles as needed */
-
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
-
-
-        }
 
 
 
@@ -339,9 +368,151 @@
         <div class="content">
             <p> Welcome to my portfolio, where technology meets innovation, and a passion for solving complex challenges drives my journey. As a highly motivated and results-driven Computer Engineer with a Master's degree in Computer Engineering, my expertise spans the realms of data science, machine learning, computer vision, and robotics. With hands-on experience as a Data Science Co-op at Abiomed Inc (Johnson & Johnson) and a Machine Learning Engineer at Mad Street Den, I have honed my skills in developing predictive models, optimizing algorithms, and contributing to cutting-edge technologies. </p>
             <!-- Add more content as needed -->
+            <h2>Skills</h2>
+            <h3>machine Learning/ Deep Learning</h3>
+
+
+            
+           
+
+            <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/python-svgrepo-com.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>Python</caption>
+               
+            </div>
+
+            <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/pytorch-svgrepo-com.svg')}}"  alt="LinkedIn Logo">
+            <caption>Pytorch</caption>
+               
+            </div>
+            <div class="neon-light">
+             <img class="logo" src=  "{{ url_for('static', filename='images/Keras.svg')}}"  alt="LinkedIn Logo">
+            <caption>keras</caption>
+               
+            </div>
+            <div class="neon-light">
+           <img class="logo" src=  "{{ url_for('static', filename='images/opencv-svgrepo-com.svg')}}"  alt="LinkedIn Logo">
+            <caption>OpenCV</caption>
+               
+            </div>
+            <div class="neon-light">
+             <img class="logo" src=  "{{ url_for('static', filename='images/scikit-learn.svg')}}"  alt="LinkedIn Logo">
+            <caption>Scikit-Learn</caption>
+               
+            </div>
+
+               <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/Matplotlib.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>Matplotlib</caption>
+               
+            </div>
+               <div class="neon-light">
+            <img class="logo2" src=  "{{ url_for('static', filename='images/Pandas.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>Pandas</caption>
+               
+            </div>
+
+
+            <h3>Backend</h3>
+
+             <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/aws-svgrepo-com.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>AWS</caption>
+               
+            </div>
+
+             <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/docker-svgrepo-com.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>Docker</caption>
+               
+            </div>
+
+             <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/sql-database-sql-azure-svgrepo-com.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>SQL</caption>
+               
+            </div>
+
+
+
+           
+
+              <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/mongodb-svgrepo-com.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>MongoDB</caption>
+               
+            </div>
+
+               <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/Elastic Search.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>Elastic</caption>
+               
+            </div>
+            
+             <div class="neon-light">
+            <img class="logo2" src=  "{{ url_for('static', filename='images/flask-svgrepo-com.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>Flask</caption>
+               
+            </div>
+
+                <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/html-svgrepo-com.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>HTML</caption>
+               
+            </div>
+
+              <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/CSS.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>CSS</caption>
+               
+            </div>
+
+
+             <h3>Other</h3>
+
+             <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/verilog-svgrepo-com.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>Verilog</caption>
+               
+            </div>
+
+               <div class="neon-light">
+            <img class="logo2" src=  "{{ url_for('static', filename='images/latex-svgrepo-com.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>Latex</caption>
+               
+            </div>
+
+                <div class="neon-light">
+            <img class="logo" src=  "{{ url_for('static', filename='images/opengl-svgrepo-com.svg')}}" caption="python" alt="LinkedIn Logo">
+            <caption>OpenGL</caption>
+               
+            </div>
+
+
+            
+
+
+            <!-- Add more figures as needed -->
+
+          
+          
+            
+          
+           
+            
+           
+            
+          
+           
+
+
+
+
 
                <div class="bottom-right-links">
-                <p>
+                <br>
+                <p> 
                  <a href="https://www.linkedin.com/in/keshav-bharadwaj/" target="_blank"><img class="logo" src=  "{{ url_for('static', filename='images/linkedin_logo.png')}}"  alt="LinkedIn Logo"></a>
             <a href="https://github.com/keshavbharadwaj" target="_blank"><img class="logo" src="{{ url_for('static', filename='images/github_logo.png')}}" alt="GitHub Logo"></a>
             <a href="mailto:bharadwajvaidyanat.k@northeastern.edu"><img class="logo" src="{{ url_for('static', filename='images/email_logo.jpg')}}" alt="{{ url_for('static', filename='images/email_logo.png') }}"></a>
