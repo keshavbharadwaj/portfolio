@@ -211,13 +211,9 @@
 
         /* Add more styles as needed */
 
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
+       
 
-
- @media only screen and (max-width: 600px){
+  @media only screen and (max-width: 600px){
         body {
             margin: 0;
             padding: 0;
@@ -243,6 +239,13 @@
             text-decoration: none;
         }
 
+        h2 {
+            color: #fff;
+            font-size: 10px;
+            text-decoration: none;
+            font-size: 10px;
+        }
+
         header p {
             display: flex;
             justify-content: center;
@@ -254,68 +257,46 @@
             margin: 0 1px;
         }
 
-        section {
-            max-width: 600px;
-            margin: 1px auto;
-            padding: 1px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 1px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-        }
+        
 
         img {
-            max-width: 300px; /* Adjust the size as needed */
-            max-height: 250px;
-            margin-right: 5px;
-            /*border-radius: 50%; */
-            margin-bottom: 10px;
-            border: 0px solid #4CAF50; /* Green */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+              padding: 3px; /* Adjust padding as needed */
+             max-width: 300px; /* Adjust the size as needed */
+            max-height: 300px ;
+        
 
-        img.logo {
-            max-width: 40px; /* Adjust the size as needed */
-            max-height: 40px; /* Adjust the size as needed */
-            margin-bottom: 2px;
         }
+ 
 
-        .bottom-right-links {
-            position: absolute;
-            bottom:5px;
-            right: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
+     
 
-        button-container {
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-    
-        .content{
+            .content{
+         
             justify-content: center;
             background-color: rgba(0, 0, 0, 0.5);
-            align-content:end;
-            margin-right: 5px;
-            
-            margin-top: 10px;
             font-size: 10px;
-            padding: 10px;
+
+
         }
 
-         .container {
+            .container {
                 display: flex;
-                gap: 5px; /* Adjust the gap between image container and content */
-                padding: 1px; /* Padding around the container */
-                justify-content: center;
-                
+                gap: 10px; /* Adjust the gap between image container and content */
+                padding: 2px; /* Padding around the container */
+                flex-direction: column;
+                    
 
             }
+        .image-container {
+            display: flex;
+            gap: 20px; /* Adjust the gap between images */
+
+      
+            
+           
+
+        }
+
 
 
 
@@ -366,11 +347,7 @@
 
         /* Add more styles as needed */
 
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
+       
 
 
         }
@@ -409,17 +386,8 @@
     <div class="container">
 
       <div class="image-container">
-
-         
-            <div class="fade-in">
-
                 <img  src="{{ url_for('static', filename='images/abiomed_work_photo.jpg')}}"  alt="Image 1">
                 
-                
-            </div>
-
-
-      
     </div>
 
   
