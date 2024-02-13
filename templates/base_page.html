@@ -187,6 +187,10 @@
     .neon-light:hover::before {
       opacity: 1;
     }
+    .connect {
+        margin-right:2%;
+        margin-bottom: 0;
+    }
 
 
  @media only screen and (max-width: 600px){
@@ -236,10 +240,11 @@
         .bottom-right-links {
             position: flex;
             bottom:20px;
-            right: 10px;
+            right: 0;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+
         }
 
         button-container {
@@ -255,6 +260,11 @@
             font-size: 13px;
 
         }
+
+        .connect {
+        margin-right:10%;
+        margin-bottom: 0;
+    }
 
 
     .rhombus-container {
@@ -341,7 +351,7 @@
               <p><span style="font-weight: bold;"> Welcome to my portfolio, where technology meets innovation, and a passion for solving complex challenges drives my journey. As a highly motivated and results-driven Computer Engineer with a Master's degree in Computer Engineering, my expertise spans the realms of data science, machine learning, computer vision, and robotics. With hands-on experience as a Data Science Co-op at Abiomed Inc (Johnson & Johnson) and a Machine Learning Engineer at Mad Street Den, I have honed my skills in developing predictive models, optimizing algorithms, and contributing to cutting-edge technologies. </span></p>
             <!-- Add more content as needed -->
             <h2>Skills</h2>
-            <h3>machine Learning/ Deep Learning</h3>
+            <h3>Machine Learning/ Deep Learning</h3>
 
 
             
@@ -441,7 +451,7 @@
             </div>
 
 
-             <h3>Other</h3>
+             <h3>Other Tools</h3>
 
              <div class="neon-light">
             <img class="logo" src=  "{{ url_for('static', filename='images/verilog-svgrepo-com.svg')}}" caption="python" alt="LinkedIn Logo">
@@ -465,38 +475,31 @@
             
 
 
-            <!-- Add more figures as needed -->
-
-          
-          
             
-          
-           
-            
-           
-            
-          
-           
-
-
-
-
 
                <div class="bottom-right-links">
+
                 <br>
+                <p class="connect"><u> Connect with me at:                </u></p>
                 <p> 
-                  
+                
+                 <a href="mailto:bharadwajvaidyanat.k@northeastern.edu"><img class="logo" src="{{ url_for('static', filename='images/email_logo.jpg')}}" alt="{{ url_for('static', filename='images/email_logo.png') }}"></a>
+
+                <a href="https://www.linkedin.com/in/keshav-bharadwaj/" target="_blank">
+                    <img class="logo" src=  "{{ url_for('static', filename='images/linkedin_logo.png')}}"  alt="LinkedIn Logo">
+                </a>
+
+                <a href="https://github.com/keshavbharadwaj" target="_blank"><img class="logo" src="{{ url_for('static', filename='images/github_logo.png')}}" alt="GitHub Logo"></a>
+
                  <a href="{{url_for('static', filename='documents/Resume.pdf') }}" target="_blank">
                     <img class="logo" src=  "{{ url_for('static', filename='images/resume-logo.png')}}"  alt="LinkedIn Logo">
                 </a>
                 
-                 <a href="https://www.linkedin.com/in/keshav-bharadwaj/" target="_blank">
-                    <img class="logo" src=  "{{ url_for('static', filename='images/linkedin_logo.png')}}"  alt="LinkedIn Logo">
-                </a>
+               
                 
-            <a href="https://github.com/keshavbharadwaj" target="_blank"><img class="logo" src="{{ url_for('static', filename='images/github_logo.png')}}" alt="GitHub Logo"></a>
+            
       
-            <a href="mailto:bharadwajvaidyanat.k@northeastern.edu"><img class="logo" src="{{ url_for('static', filename='images/email_logo.jpg')}}" alt="{{ url_for('static', filename='images/email_logo.png') }}"></a>
+           
              
             
         </p>
