@@ -5,31 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keshav Bharadwaj Vaidyanathan</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url("{{ url_for('static', filename='images/background.gif') }}"); ; 
+      body {
+            padding: 70px;
+            font-family: 'Comic Sans MS';
+            background-image: url("{{ url_for('static', filename='images/background.gif')}}");
             color: #fff;
+             justify-content: center;
+
         }
 
 
 
-        header {
+       header {
 
-            text-align: center;
-            padding: 10px 10px;
+            padding: 10px;
             /*background-color: #4CAF50; /* Green */
             color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
         }
 
-       
-
-     
-           
-        header h1 a {
+        header h1 {
             color: #fff;
             text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
+        }
+          body h2 {
+            font-size: 40px;
+            text-align: center;
+
         }
 
         header p {
@@ -39,19 +46,6 @@
             margin-top: 10px;
         }
 
-        header p a {
-            margin: 0 10px;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
 
         img {
             max-width: 290px; /* Adjust the size as needed */
@@ -81,8 +75,7 @@
 
         .bottom-right-links {
             position: flex;
-            bottom:1px;
-            right: 10px;
+            
             display: flex;
             flex-direction: column;
             align-items: flex-end;
@@ -106,6 +99,13 @@
             margin-right: 90px;
             margin-left : 5px;
 
+        }
+
+        
+        .content{
+            text-align: justify;
+            font-size: 25px;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
 
@@ -189,55 +189,32 @@
 
 
  @media only screen and (max-width: 600px){
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url("{{ url_for('static', filename='images/background.gif') }}");  
-            color: #fff;
-            background-size:100%;
-        }   
+         body {
+            padding: 20px;
 
-               figure {
-      text-align: center;
-    }
+        } 
 
         
 
+     
         header {
 
-            text-align: center;
-            padding: 2px 2px;
-            /*background-color: #4CAF50; /* Green */
-            color: #fff;
+          padding: 10px;
+            font-size: 30px;
         }
 
         header h1 {
             color: #fff;
-            font-size: 20px;
+            font-size: 30px;
             text-decoration: none;
         }
 
-        header p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1px;
+       
+        .content{
+            font-size: 13px;
+
         }
 
-        header p a {
-            margin: 0 1px;
-        }
-
-        section {
-            max-width: 600px;
-            margin: 1px auto;
-            padding: 1px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 1px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-        }
 
         img {
             max-width: 250px; /* Adjust the size as needed */
@@ -257,7 +234,7 @@
 
         .bottom-right-links {
             position: flex;
-            bottom:5px;
+            bottom:20px;
             right: 10px;
             display: flex;
             flex-direction: column;
@@ -338,7 +315,7 @@
 <body>
         <header>
     
-        <h1>Keshav Bharadwaj Vaidyanathan</h1>
+        
          
           <div class="rhombus-container" >
             <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
@@ -360,13 +337,13 @@
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
-       
+       <h1>Keshav Bharadwaj Vaidyanathan</h1>
     </header>
 
    <div class="content-section">
         <img  src="{{ url_for('static', filename='images/dp_painted.png')}}" alt="Your Circular Photo Placeholder" alt="Section Image">
         <div class="content">
-            <p> Welcome to my portfolio, where technology meets innovation, and a passion for solving complex challenges drives my journey. As a highly motivated and results-driven Computer Engineer with a Master's degree in Computer Engineering, my expertise spans the realms of data science, machine learning, computer vision, and robotics. With hands-on experience as a Data Science Co-op at Abiomed Inc (Johnson & Johnson) and a Machine Learning Engineer at Mad Street Den, I have honed my skills in developing predictive models, optimizing algorithms, and contributing to cutting-edge technologies. </p>
+              <p><span style="font-weight: bold;"> Welcome to my portfolio, where technology meets innovation, and a passion for solving complex challenges drives my journey. As a highly motivated and results-driven Computer Engineer with a Master's degree in Computer Engineering, my expertise spans the realms of data science, machine learning, computer vision, and robotics. With hands-on experience as a Data Science Co-op at Abiomed Inc (Johnson & Johnson) and a Machine Learning Engineer at Mad Street Den, I have honed my skills in developing predictive models, optimizing algorithms, and contributing to cutting-edge technologies. </span></p>
             <!-- Add more content as needed -->
             <h2>Skills</h2>
             <h3>machine Learning/ Deep Learning</h3>
@@ -513,9 +490,20 @@
                <div class="bottom-right-links">
                 <br>
                 <p> 
-                 <a href="https://www.linkedin.com/in/keshav-bharadwaj/" target="_blank"><img class="logo" src=  "{{ url_for('static', filename='images/linkedin_logo.png')}}"  alt="LinkedIn Logo"></a>
+                  
+                 <a href="{{url_for('static', filename='documents/Resume.pdf') }}" target="_blank">
+                    <img class="logo" src=  "{{ url_for('static', filename='images/resume-logo.png')}}"  alt="LinkedIn Logo">
+                </a>
+                
+                 <a href="https://www.linkedin.com/in/keshav-bharadwaj/" target="_blank">
+                    <img class="logo" src=  "{{ url_for('static', filename='images/linkedin_logo.png')}}"  alt="LinkedIn Logo">
+                </a>
+                
             <a href="https://github.com/keshavbharadwaj" target="_blank"><img class="logo" src="{{ url_for('static', filename='images/github_logo.png')}}" alt="GitHub Logo"></a>
+      
             <a href="mailto:bharadwajvaidyanat.k@northeastern.edu"><img class="logo" src="{{ url_for('static', filename='images/email_logo.jpg')}}" alt="{{ url_for('static', filename='images/email_logo.png') }}"></a>
+             
+            
         </p>
                 </div>
 

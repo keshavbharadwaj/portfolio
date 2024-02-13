@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Segmask Frustum Pointpillar</title>
     <style>
+     
+
+
+
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
+            padding: 70px;
+            font-family: 'Comic Sans MS';
             background-image: url("{{ url_for('static', filename='images/background.gif')}}");
             color: #fff;
+             justify-content: center;
+
+
+
         }
 
 
         header {
 
-            text-align: center;
-            padding: 10px 10px;
+            padding: 10px;
             /*background-color: #4CAF50; /* Green */
             color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
         }
 
-        header h1 a {
+        header h1 {
             color: #fff;
             text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
         }
 
         header p {
@@ -38,25 +52,27 @@
             margin: 0 10px;
         }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
         }
+
+  
 
          figure {
       text-align: center;
     }
       
         .container {
-                display: flex;
-                gap: 10px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */
+
+                display: flex; /* Adjust the gap between image container and content */
                 flex-direction: column;
+                justify-content: center;
 
             }
 
@@ -69,8 +85,12 @@
 
   
         .image-container {
-            display: flex;
-            gap: 20px; /* Adjust the gap between images */
+            display: flex;;
+            gap:75px;
+
+         
+             /* Adjust the gap between images */
+
             
            
 
@@ -93,7 +113,7 @@
         /* Adjust the styles as needed */
 
         img {
-            max-width: 100px; /* Adjust the size as needed */
+            max-width: 200px; /* Adjust the size as needed */
             height: auto;
             margin-bottom: 10px; /* Adjust the margin between images */
            
@@ -110,8 +130,21 @@
             margin-bottom: 5px;
           
         }
-        .content{
+
+          .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
+           
+            padding: 10px; /* Adjust padding as needed */
+            max-width:100%;/* Adjust the size as needed */
+            height: auto;
+            text-align: center;
             justify-content: center;
+          
+        }
+
+        .content{
+            text-align: justify;
+            font-size: 25px;
             background-color: rgba(0, 0, 0, 0.5);
         }
 
@@ -166,7 +199,7 @@
             cursor: pointer;
             overflow: hidden;
             border: 2px solid #e64a19; /* Darker Deep Orange */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
@@ -200,135 +233,54 @@
 }
 
 
-        /* Add more styles as needed */
-
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
 
 
 
 
    @media only screen and (max-width: 600px){
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url("{{ url_for('static', filename='images/background.gif') }}");  
-            color: #fff;
-            background-size:100%;
+            padding: 20px;
         }   
 
+             
+     header {
+
+            padding: 10px;
+            font-size: 30px;
+           
+        }
 
         
 
-        header {
-
-            text-align: center;
-            padding: 2px 2px;
-            /*background-color: #4CAF50; /* Green */
-            color: #fff;
-        }
-
-
         header h1 {
             color: #fff;
-            font-size: 20px;
+            font-size: 25px;
             text-decoration: none;
         }
 
-        h2 {
-            color: #fff;
-            font-size: 10px;
-            text-decoration: none;
-            font-size: 10px;
-        }
-
-        header p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1px;
-        }
-
-        header p a {
-            margin: 0 1px;
-        }
-
-        section {
-            max-width: 600px;
-            margin: 1px auto;
-            padding: 1px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 1px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-        }
-
-
-
-      
-        .container {
-                display: flex;
-                gap: 10px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */
-             flex-direction: column;
-                
-
-            }
-
-  
-        }
-
-          .stacked-images {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
 
   
         .image-container {
-            display: flex;
-            gap: 2px; /* Adjust the gap between images */
+            gap: 20px; /* Adjust the gap between images */
             
 
         }
 
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+       
 
         /* Adjust the styles as needed */
 
         img {
             max-width: 75px; /* Adjust the size as needed */
-            height: auto;
             margin-bottom: 2px; /* Adjust the margin between images */
-            margin-left: 1px;
            
 
         }
 
         .caption {
-            text-align: center;
-            padding: 2px;
-            background: rgba(0, 0, 0, 0.7);
-            opacity: 1; /* Always visible */
-            transition: opacity 0.3s ease;
-            font-size: 10px;
-            margin-bottom: 1px;
+             font-size: 12px;
+        
         }
 
         .specific-image {
@@ -336,58 +288,18 @@
            
             padding: 1px; /* Adjust padding as needed */
              max-width: 75px; /* Adjust the size as needed */
-            height: auto;
-            margin-top: 30px;
-            margin-bottom: 5px;
-         
           
         }
         .content{
-         
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.5);
             font-size: 13px;
 
         }
 
 
-        /* Delay each image by adding animation delay */
-        .fade-in:nth-child(1) { animation-delay: 2s; }
-        .fade-in:nth-child(2) { animation-delay: 1.5s; }
-        .fade-in:nth-child(3) { animation-delay: 1s; }
-        .fade-in:nth-child(4) { animation-delay: 0.5s; }
-         .fade-in:nth-child(5) { animation-delay: 2s; }
-        .fade-in:nth-child(6) { animation-delay: 1.5s; }
-        .fade-in:nth-child(7) { animation-delay: 1s; }
-        .fade-in:nth-child(8) { animation-delay: 0.5s; }
-    
-
-
-        .fad-in {
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-
-        /* Delay each image by adding animation delay */
-        .fad-in:nth-child(2) { animation-delay: 2.5s; }
-        .fad-in:nth-child(3) { animation-delay: 3s; }
-        .fad-in:nth-child(4) { animation-delay: 3.5s; }
-        .fad-in:nth-child(5) { animation-delay: 4s; }
-
-         .fa-in {
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-
-        /* Delay each image by adding animation delay */
-        .fa-in:nth-child(2) { animation-delay: 4s; }
-
-
-        /* Example styles for a centered container */
   
 
 
-          .rhombus-container {
+        .rhombus-container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -439,9 +351,7 @@
 </head>
 <body>
         <header>
-    
-        <h1>Segmask Frustum PointPillar for 3D Object Detection</h1>
-         
+        
          
            <div class="rhombus-container" >
             <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
@@ -464,6 +374,7 @@
             </div>
         </div>
        
+          <h1>Segmask Frustum PointPillar for 3D Object Detection</h1>
     </header>
 
     <div class="container">
@@ -517,14 +428,25 @@
     </div>
     <div class="fa-in">
     <div class="content">
-             <p>Aim: <span style="font-weight: bold;">Model to predicts 3D bounding box cordinates for cars given RGB image and pointcloud data.</span></p>
-                <p>
-                <ul>
-                      <li>Modified the existing Frustum-PointPillars architecture which uses images and point-cloud data (sensor fusion camera and LiDAR) by
-replacing the Gaussian mask with a segmentation mask and achieved a mAP score of 78.01 for cars class in the KITTI-Hard dataset.</li>
+             <p><span style="font-weight: bold;"> Aim: Adopt a multi-sensor approach to detect 3D objects from RGB + LiDAR data by leveraging a robust 2D object detector like YOLOv7 along with a novel segmentation mask on top of the Frustum PointPillar approach to reduce the search space in 3D detection.</span></p>
+
+             <p><span style="font-weight: bold;"> Intuition: 2D image recognition tasks like object detection and instance segmentation, have made significant strides lately but beyond obtaining 2D bounding boxes or pixel masks, 3D comprehension is avidly sought in many major applications including autonomous driving and augmented reality.</span></p>
+
+    </div>
+    <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/frustum.png')}}" alt="Image 8">
+    <div class="content">
+
+             <p><span style="font-weight: bold;"> Approach: In light of this, there is an increasing demand for 3D object detection models that classify accurately and estimate the oriented 3D bounding boxes of actual objects using multi-sensor data. This work develops on top of Frustum PointPillar by leveraging robust 2D object detectors as priors to build a 3D viewing frustum that predicts a 3D bounding box of the object from the points in the frustum. </span></p>
+                    
+                <p><ul>
+                      <li>Modified the existing Frustum-PointPillars architecture which uses images and point-cloud data (sensor fusion camera and LiDAR) by replacing the naive Gaussian mask with a pre-trained PSPNet segmentation mask and achieved a mAP score of 78.01 (+3%)for cars class in the KITTI-Hard dataset.</li>
                       <li>Established a real-time detection by adding a YOLOv7 2D detection layer instead of using KITTI ground truths.</li>
-                </ul>
-                </p>
+                      <li>The future scope of this work is to improve 2D detection in low-light conditions using data from RGB and LiDAR and to avoid outliers, it is essential to remove reflections in surfaces such as glasses and windows.</li>
+                </ul></p>
+    </div>
+       <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/birds_eye_view.png')}}" alt="Image 8">
+       <div class="content">
+            <p>SegMask FP model output visualized in KITTI-hard dataset for cars that shows 3D bounding boxes on 2D image and this is also the bird's eye view for the same.</p>
                 <p>Course: <span style="font-weight: bold;"><i> Advanced Computer Vision </i> </span></p>
                 <p>University: <span style="font-weight: bold;">Northeastern University</span></p>
 

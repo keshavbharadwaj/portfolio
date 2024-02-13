@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
+   <style>
+         body {
+            padding: 70px;
+            font-family: 'Comic Sans MS';
             background-image: url("{{ url_for('static', filename='images/background.gif')}}");
             color: #fff;
+             justify-content: center;
+
         }
 
 
         header {
 
-            text-align: center;
-            padding: 10px 10px;
+            padding: 10px;
             /*background-color: #4CAF50; /* Green */
             color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
         }
 
-        header h1 a {
+        header h1 {
             color: #fff;
             text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
+        }
+          body h2 {
+            font-size: 40px;
+            text-align: center;
+
         }
 
         header p {
@@ -34,62 +45,87 @@
             margin-top: 10px;
         }
 
-        header p a {
-            margin: 0 10px;
+      
+
+
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
         }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
 
-        img {
-            max-width: 290px; /* Adjust the size as needed */
+      
+         .container {
+
+                display: flex; /* Adjust the gap between image container and content */
+                flex-direction: column;
+                justify-content: center;
+
+            }
+
+
+
+
+        .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
+           
+            margin-left: 10%; /* Adjust padding as needed */
+            margin-right:  10%; 
+            max-width:100%;
+            width:80%;/* Adjust the size as needed */
             height: auto;
-            margin-right: 10px;
-            /*border-radius: 50%; */
-            margin-bottom: 10px;
-            border: 0px solid #4CAF50; /* Green */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        img.logo {
-            max-width: 40px; /* Adjust the size as needed */
-            max-height: 40px; /* Adjust the size as needed */
-            margin-bottom: 2px;
-        }
-
-        .bottom-right-links {
-            position: absolute;
-            bottom:5px;
-            right: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        button-container {
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .content-section {
-            display: flex;
-            align-items: top;
+            text-align: center;
             justify-content: center;
-            padding: 40px;
-            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
-            margin-right: 90px;
-            margin-left : 5px;
+          
         }
 
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Adjust the styles as needed */
+
+
+     
+
+  
+        .content{
+            text-align: justify;
+            font-size: 25px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* Delay each image by adding animation delay */
+        .fade-in:nth-child(1) { animation-delay: 0.5s; }
+        .fade-in:nth-child(2) { animation-delay: 1s; }
+        .fade-in:nth-child(3) { animation-delay: 1.5s; }
+        .fade-in:nth-child(4) { animation-delay: 2s; }
+
+         .fa-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* Delay each image by adding animation delay */
+        .fa-in:nth-child(2) { animation-delay: 2s; }
+        
+    
 
 
           .rhombus-container {
@@ -126,8 +162,14 @@
             color: #fff;
             font-size: 14px;
         }
-
-
+          .links {
+            margin-top: 10px;
+        }
+           img.logo {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+        }
 
         a:link, a:visited{
   padding: 10px 10px;
@@ -136,88 +178,39 @@
   color: red;
 }
 
-
-        /* Add more styles as needed */
-
-        @media only screen and (max-width: 600px){
+     @media only screen and (max-width: 600px){
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url("{{ url_for('static', filename='images/background.gif') }}");  
-            color: #fff;
-            background-size:100%;
-        }   
+            padding: 20px;
+
+        } 
 
         
 
+     
         header {
 
-            text-align: center;
-            padding: 2px 2px;
-            /*background-color: #4CAF50; /* Green */
-            color: #fff;
+          padding: 10px;
+            font-size: 30px;
         }
 
         header h1 {
             color: #fff;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+          body h2 {
+            color: #fff;
             font-size: 20px;
             text-decoration: none;
         }
+       
+        .content{
+            font-size: 13px;
 
-        h2 {
-            color: #fff;
-            font-size: 10px;
-            text-decoration: none;
-            font-size: 10px;
         }
 
-        header p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1px;
-        }
-
-        header p a {
-            margin: 0 1px;
-        }
-
-        section {
-            max-width: 600px;
-            margin: 1px auto;
-            padding: 1px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 1px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-        }
-
-        img {
-            max-width: 150px; /* Adjust the size as needed */
-            max-height: 200px;
-            margin-right: 5px;
-            /*border-radius: 50%; */
-            margin-bottom: 10px;
-            border: 0px solid #4CAF50; /* Green */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        img.logo {
-            max-width: 40px; /* Adjust the size as needed */
-            max-height: 40px; /* Adjust the size as needed */
-            margin-bottom: 2px;
-        }
-
-        .bottom-right-links {
-            position: absolute;
-            bottom:5px;
-            right: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
+      
         button-container {
             display: flex;
             justify-content: space-evenly;
@@ -225,20 +218,8 @@
             margin-top: 20px;
         }
 
-        .content-section {
-            display: flex;
-            align-items: top;
-            justify-content: center;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
-            margin-right: 5px;
-            margin-left : 5px;
-            margin-top: 10px;
-            font-size: 13px;
-        }
 
-
-
+     
           .rhombus-container {
             display: flex;
             justify-content: center;
@@ -286,12 +267,7 @@
 
         /* Add more styles as needed */
 
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
-
+       
 
 
         }
@@ -300,7 +276,7 @@
 <body>
         <header>
     
-        <h1>Education</h1>
+
          
                   <div class="rhombus-container" >
             <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
@@ -322,38 +298,34 @@
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
-       
+
+       <h1>Education</h1>
     </header>
 
-   <div class="content-section">
-        <img  src="{{ url_for('static', filename='images/neu_logo.jpg')}}"  alt="Your Circular Photo Placeholder" alt="Section Image">
+   <div class="container">
         <div class="content">
-             
-              <p>   
+             <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/neu_logo.jpg')}}"  alt="Your Circular Photo Placeholder" alt="Section Image">
+               <p><span style="font-weight: bold;"> 
                     <h2>  Masters in Computer Engineering - Northeastern University</h2>
                      <ul>
                       <li>Specialization :- Computer Vision, Machine Learning and Algorithms </li>
-                      <li>GPA :- 3.88/4.0
+                      <li>GPA :- 3.88/4.0</li>
                       <li>Courses :- Introduction to machine learning and pattern recognition, Deep Learning, Natural Language Processing, Advances in deep learning, Advanced Computer Vision, Fundamentals of computer Engineering, DBMS, Assitive Robotics</li>
                     </ul>
-                </p>
+                </span></p>
             <!-- Add more content as needed -->    
-        </div>
+    <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/vtu_logo.jpg')}}"  alt="Your Circular Photo Placeholder" alt="Section Image">
         
-    </div>
-
-       <div class="content-section">
-        <img  src="{{ url_for('static', filename='images/vtu_logo.jpg')}}"  alt="Your Circular Photo Placeholder" alt="Section Image">
-           <div class="content">
+   
              
-              <p>   
+              <p> <span style="font-weight: bold;">   
                     <h2>  Bachelors in Engineering - VTU</h2>
                      <ul>
                       <li>Specialization :- Electronics and Communication Engineering </li>
-                      <li>GPA :- 8.43/10.0
+                      <li>GPA :- 8.43/10.0</li>
                       <li>Leader of technical team Falcon, responsible for conducting and planning technical project expos. Organized and conducted technical seminars, national conferences, and technical workshops.</li>
                     </ul>
-                </p>
+                </span></p>
             <!-- Add more content as needed -->    
         </div>
         

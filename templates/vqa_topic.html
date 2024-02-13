@@ -6,25 +6,31 @@
     <title>Visual Question Answering</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
+            padding: 70px;
+            font-family: 'Comic Sans MS';
             background-image: url("{{ url_for('static', filename='images/background.gif')}}");
             color: #fff;
+             justify-content: center;
+
         }
 
 
         header {
 
-            text-align: center;
-            padding: 10px 10px;
+            padding: 10px;
             /*background-color: #4CAF50; /* Green */
             color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
         }
 
-        header h1 a {
+        header h1 {
             color: #fff;
             text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
         }
 
         header p {
@@ -34,44 +40,44 @@
             margin-top: 10px;
         }
 
-        header p a {
-            margin: 0 10px;
+      
+
+
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
         }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
 
       
-        .container {
-                display: flex;
-                gap: 10px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */
-                
+         .container {
+
+                display: flex; /* Adjust the gap between image container and content */
+                flex-direction: column;
+                justify-content: center;
 
             }
 
-        .stacked-images {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
 
-  
-        .image-container {
-            display: flex;
-            gap: 0px; /* Adjust the gap between images */
-            
+
+        .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
            
-
+            margin-left: 10%; /* Adjust padding as needed */
+            margin-right:  10%; 
+            max-width:100%;
+            width:80%;/* Adjust the size as needed */
+            height: auto;
+            text-align: center;
+            justify-content: center;
+          
         }
+
 
         .fade-in {
             opacity: 0;
@@ -89,46 +95,13 @@
 
         /* Adjust the styles as needed */
 
-        img {
-            max-width: 350px; /* Adjust the size as needed */
-            height: auto;
-            margin-top: 22px; /* Adjust the margin between images */
 
-           
+     
 
-        }
-
-        .specific-image {
-            /* Specific styling for the image with class "specific-image" */
-           
-            padding: 3px; /* Adjust padding as needed */
-             max-width: 110px; /* Adjust the size as needed */
-            height: auto;
-            margin-top: 10px;
-            margin-bottom: 10px;
-          
-        }
-
-         .specific-image2 {
-            /* Specific styling for the image with class "specific-image" */
-           
-            padding: 3px; /* Adjust padding as needed */
-             max-width: 110px; /* Adjust the size as needed */
-            height: auto;
-            margin-top: 35px;
-            margin-bottom: 5px;
-          
-        }
-               .container {
-                display: flex;
-                gap: 10px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */
-            
-
-            }
-
+  
         .content{
-            justify-content: center;
+            text-align: justify;
+            font-size: 25px;
             background-color: rgba(0, 0, 0, 0.5);
         }
 
@@ -200,94 +173,34 @@
   color: red;
 }
 
-
-        /* Add more styles as needed */
-
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
-
      @media only screen and (max-width: 600px){
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url("{{ url_for('static', filename='images/background.gif') }}");  
-            color: #fff;
-            background-size:100%;
-        }   
+            padding: 20px;
+
+        } 
 
         
 
+     
         header {
 
-            text-align: center;
-            padding: 2px 2px;
-            /*background-color: #4CAF50; /* Green */
-            color: #fff;
+          padding: 10px;
+            font-size: 30px;
         }
 
         header h1 {
             color: #fff;
-            font-size: 20px;
+            font-size: 30px;
             text-decoration: none;
         }
 
-        h2 {
-            color: #fff;
-            font-size: 10px;
-            text-decoration: none;
-            font-size: 10px;
+       
+        .content{
+            font-size: 13px;
+
         }
 
-        header p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1px;
-        }
-
-        header p a {
-            margin: 0 1px;
-        }
-
-        section {
-            max-width: 600px;
-            margin: 1px auto;
-            padding: 1px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 1px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-        }
-
-        img {
-            max-width: 150px; /* Adjust the size as needed */
-            max-height: 200px;
-            margin-right: 0px;
-            /*border-radius: 50%; */
-            margin-bottom: 10px;
-            border: 0px solid #4CAF50; /* Green */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        img.logo {
-            max-width: 40px; /* Adjust the size as needed */
-            max-height: 40px; /* Adjust the size as needed */
-            margin-bottom: 2px;
-        }
-
-        .bottom-right-links {
-            position: absolute;
-            bottom:5px;
-            right: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
+      
         button-container {
             display: flex;
             justify-content: space-evenly;
@@ -295,59 +208,8 @@
             margin-top: 20px;
         }
 
-            .content{
-         
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            font-size: 13px;
 
-        }
-
-        .container {
-                display: flex;
-                gap: 10px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */  
-                flex-direction: column;  
-
-            }
-        .content-section {
-            display: flex;
-            align-items: top;
-            justify-content: center;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
-            margin-right: 5px;
-            margin-left : 5px;
-            margin-top: 10px;
-            font-size: 10px;
-        }
-
-
-        .specific-image {
-            /* Specific styling for the image with class "specific-image" */
-           
-            padding: 0px; /* Adjust padding as needed */
-             max-width: 75px; /* Adjust the size as needed */
-            height: auto;
-            margin-top: 2px;
-            margin-bottom: 10px;
-          
-        }
-
-         .specific-image2 {
-            /* Specific styling for the image with class "specific-image" */
-           
-            padding: 0px; /* Adjust padding as needed */
-             max-width: 75px; /* Adjust the size as needed */
-            height: auto;
-            margin-top: 19px;
-            margin-bottom: 5px;
-
-          
-        }
-
-
-
+     
           .rhombus-container {
             display: flex;
             justify-content: center;
@@ -393,14 +255,6 @@
 }
 }
 
-        /* Add more styles as needed */
-
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
-
 
         }
     </style>
@@ -408,8 +262,6 @@
 <body>
         <header>
     
-        <h1>Visual Question Answering</h1>
-         
            <div class="rhombus-container" >
             <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
                 <div class="rhombus-text">Home</div>
@@ -430,11 +282,14 @@
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
+
+        <h1>Visual Question Answering</h1>
+         
        
     </header>
 
     <div class="container">
-      <div class="image-container">
+ <!--      <div class="image-container">
 
         <div class="stacked-images">
             <div class="fade-in">
@@ -471,23 +326,36 @@
 
        
     </div>
-</div>
+</div> -->
+
 
     <div class="fa-in">
+     <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/vqa_base_line.png')}}" alt="Image 8">
     <div class="content">
-             <p>Aim: <span style="font-weight: bold;">Model predicts answers, given an image and a natural language question based on the image.</span></p>
-                <p>
-                <ul>
-                      <li>Achieved 57% accuracy with the baseline LSTM Question + norm image model with a VGGnet image embedding</li>
-                      <li>Achieved 70.68% accuracy with the transformer-based LXMERT model for visual question answering on the VQA dataset.</li>
-                </ul>
-                </p>
-                <p>Course: <span style="font-weight: bold;"><i> Deep Learning </i> </span></p>
-                <p>University: <span style="font-weight: bold;">Northeastern University</span></p>
+             <p><span style="font-weight: bold;">Aim: The goal of a Visual Question Answering (VQA) system is to empower machines with the capability to comprehend and respond to natural language questions about visual content, seamlessly integrating computer vision for image understanding and natural language processing (NLP) for effective communication.</span></p>
+              <p><span style="font-weight: bold;">
+             Baseline: In our initial approach, we employ an LSTM Q+I model as the baseline. This model incorporates question embeddings generated by a one-hidden-layer LSTM, resulting in a 1024-dimensional embedding. Simultaneously, image embeddings are derived from a pre-trained VGG network, yielding a 4096-dimensional representation. These embeddings are then combined and fed into a fully connected neural network classifier with two hidden layers. The model is trained end-to-end with cross-entropy loss, keeping VGGNet parameters frozen.
+            </span></p>
+</div>
+</div>
+<div class= "fa-in"> 
+  <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/lxmert_architecture.png')}}" alt="Image 8">
+ <div class="content">
+       <p><span style="font-weight: bold;">Transformer Model: Learning Cross-Modality Encoder Representations From Transformer (LxMERT):
+Our final model, the "Learning Cross-Modality Encoder Representations," leverages the power of Transformers. This star of the show collaborates with three essential components: the language encoder, object relationship encoder, and the cross-modality encoder. Pre-trained with masked language modeling, these components facilitate alignment between captions and images. Two key sidekicks, Word-Level Sentence Embeddings and Object-Level Image Embeddings, employ attention mechanisms and Transformers to transform inputs into effective sequences. The cross-modality encoder serves as a cupid, aligning language and vision through self-attention, cross-attention, and Feed-forward layers, enhanced with residual connections and layer norms for stability. The model outputs language, vision, and cross-modality representations, blending them through Fully Connected layers to generate a softmax distribution over 3128 possible answers. This comprehensive approach ensures our Transformers excel at cross-modality matchmaking, achieving a successful union between language and vision in the realm of Visual Question Answering.</span></p>
+  <p><span style="font-weight: bold;"><ul>
+        <li>Achieved 57% accuracy with the baseline LSTM Question + norm image model with a VGGnet image embedding</li>
+        <li>Achieved 70.68% accuracy with the transformer-based LXMERT model for visual question answering on the VQA dataset.</li>
+</ul></span></p>
 
 
-                
-                 <div class="links">
+ <p><span style="font-weight: bold;">
+              
+                </span></p>
+                   <p><span style="font-weight: bold;">Course: Deep Learning </span></p>
+                <p><span style="font-weight: bold;">University: Northeastern University</span></p>
+
+                  <div class="links">
                          <a href="https://github.com/keshavbharadwaj/Visual-Question-Answering" target="_blank">
                         <img class ="logo" src="{{ url_for('static', filename='images/github_logo_2.png')}}" alt="github logo" height="20">
                         Github
@@ -498,7 +366,9 @@
                         Report
                     </a>
                 </div>
-        </div>
+
+            </div>
+
         </div>
     </div>
 
@@ -509,3 +379,4 @@
 
 
 </html>
+

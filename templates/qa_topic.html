@@ -6,26 +6,31 @@
     <title>Question Answering System</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
+            padding: 70px;
+            font-family: 'Comic Sans MS';
             background-image: url("{{ url_for('static', filename='images/background.gif')}}");
             color: #fff;
-            color: #fff;
+             justify-content: center;
+
         }
 
 
         header {
 
-            text-align: center;
-            padding: 10px 10px;
+            padding: 10px;
             /*background-color: #4CAF50; /* Green */
             color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
         }
 
-        header h1 a {
+        header h1 {
             color: #fff;
             text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
         }
 
         header p {
@@ -35,41 +40,44 @@
             margin-top: 10px;
         }
 
-        header p a {
-            margin: 0 10px;
+      
+
+
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
         }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
 
       
-        .container {
-                display: flex;
-                gap: 100px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */
-                flex-direction: column
-                
+         .container {
+
+                display: flex; /* Adjust the gap between image container and content */
+                flex-direction: column;
+                justify-content: center;
 
             }
 
-     
 
-  
-        .image-container {
-            display: flex;
-            gap: 0px; /* Adjust the gap between images */
-            justify-content: center
-            
+
+
+        .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
            
-
+            margin-left: 30%; /* Adjust padding as needed */
+            margin-right:  30%; 
+            max-width:100%;
+            width:40%;/* Adjust the size as needed */
+            height: auto;
+            text-align: center;
+            justify-content: center;
+          
         }
+
 
         .fade-in {
             opacity: 0;
@@ -87,28 +95,30 @@
 
         /* Adjust the styles as needed */
 
-        img {
-            max-width: 450px; /* Adjust the size as needed */
-            
-            margin-top: 22px; /* Adjust the margin between images */
-            margin-left: 70px;
 
-           
+     
 
-        }
-
-
+  
         .content{
-            justify-content: center;
+            text-align: justify;
+            font-size: 25px;
             background-color: rgba(0, 0, 0, 0.5);
         }
 
 
         /* Delay each image by adding animation delay */
         .fade-in:nth-child(1) { animation-delay: 0.5s; }
-        
+        .fade-in:nth-child(2) { animation-delay: 1s; }
+        .fade-in:nth-child(3) { animation-delay: 1.5s; }
+        .fade-in:nth-child(4) { animation-delay: 2s; }
 
-  
+         .fa-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* Delay each image by adding animation delay */
+        .fa-in:nth-child(2) { animation-delay: 2s; }
         
     
 
@@ -147,7 +157,7 @@
             color: #fff;
             font-size: 14px;
         }
-             .links {
+          .links {
             margin-top: 10px;
         }
            img.logo {
@@ -163,96 +173,34 @@
   color: red;
 }
 
-
-        /* Add more styles as needed */
-
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
-
-
-
      @media only screen and (max-width: 600px){
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url("{{ url_for('static', filename='images/background.gif') }}");  
-            color: #fff;
-            background-size:100%;
-        }   
+            padding: 20px;
+
+        } 
 
         
 
+     
         header {
 
-            text-align: center;
-            padding: 2px 2px;
-            /*background-color: #4CAF50; /* Green */
-            color: #fff;
+          padding: 10px;
+            font-size: 30px;
         }
 
         header h1 {
             color: #fff;
-            font-size: 20px;
+            font-size: 30px;
             text-decoration: none;
         }
 
-        h2 {
-            color: #fff;
-            font-size: 10px;
-            text-decoration: none;
-            font-size: 10px;
+       
+        .content{
+            font-size: 13px;
+
         }
 
-        header p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1px;
-        }
-
-        header p a {
-            margin: 0 1px;
-        }
-
-        section {
-            max-width: 600px;
-            margin: 1px auto;
-            padding: 1px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 1px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-        }
-
-        img {
-            max-width: 150px; /* Adjust the size as needed */
-            max-height: 200px;
-            margin-right: 0px;
-            /*border-radius: 50%; */
-            margin-bottom: 10px;
-            border: 0px solid #4CAF50; /* Green */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        img.logo {
-            max-width: 40px; /* Adjust the size as needed */
-            max-height: 40px; /* Adjust the size as needed */
-            margin-bottom: 2px;
-        }
-
-        .bottom-right-links {
-            position: absolute;
-            bottom:5px;
-            right: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
+      
         button-container {
             display: flex;
             justify-content: space-evenly;
@@ -260,36 +208,8 @@
             margin-top: 20px;
         }
 
-            .content{
-         
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            font-size: 13px;
 
-        }
-
-           .container {
-                display: flex;
-                gap: 10px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */  
-                flex-direction: column;  
-
-            }
-        .content-section {
-            display: flex;
-            align-items: top;
-            justify-content: center;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
-            margin-right: 5px;
-            margin-left : 5px;
-            margin-top: 10px;
-            font-size: 10px;
-        }
-
-
-
-
+     
           .rhombus-container {
             display: flex;
             justify-content: center;
@@ -335,23 +255,13 @@
 }
 }
 
-        /* Add more styles as needed */
-
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
-
 
         }
     </style>
 </head>
 <body>
         <header>
-    
-        <h1>Question Answering System</h1>
-         
+     
            <div class="rhombus-container" >
             <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
                 <div class="rhombus-text">Home</div>
@@ -373,6 +283,7 @@
             </div>
         </div>
        
+       <h1>Question Answering System</h1>
     </header>
 
     <div class= "fade-in">
@@ -380,19 +291,28 @@
 
       <div class="image-container">
 
-        <img  src="{{ url_for('static', filename='images/bert.png')}}"  alt="Image 1">
+        <img class="specific-image-inline" src="{{ url_for('static', filename='images/bert.png')}}"  alt="Image 1">
       
         </div>
 
   
     <div class="content">
-             <p>Aim: <span style="font-weight: bold;">Model predicts answers, given an image and a natural language question based on the image.</span></p>
-                <p>
+             <p> <span style="font-weight: bold;"> Aim: Develop a robust and intelligent system capable of comprehending natural language questions, and providing accurate and contextually appropriate answers. </span></p>
+             <p> <span style="font-weight: bold;">
+                 Baseline: 
+The baseline model utilized for the experiment involved employing a Bi-directional LSTM (Long Short Term Memory) with self-attention, complemented by bag-of-words word embedding.
+             </span></p>
+             <p> <span style="font-weight: bold;">
+BERT Model :- DistilledBERT, a quantized and pruned iteration of BERT, offers notable advantages over BERT-Base, including a 40% reduction in parameters, a 60% increase in training speed, approximately 4.5 times faster inference for standard NLP tasks, and a smaller size facilitating easier deployment and tuning, while still maintaining 95% of performance. </span></p>
+
+
+            <p>
                 <ul>
-                      <li>Achieved a 63.5% accuracy and 66.7 F1-score with the baseline Seq2seq LSTM model on SQuAD2.0.</li>
+                      <li>Achieved a 63.5% accuracy and 66.7 F1-score with the baseline Bi-Directional LSTM model on SQuAD2.0.</li>
                       <li>Achieved 77.3% accuracy with Distilled BERT, achieving an 85.4 F1-score for question-answering tasks.</li>
                 </ul>
                 </p>
+
                 <p>Course: <span style="font-weight: bold;"><i> Natural Language Processing </i> </span></p>
                 <p>University: <span style="font-weight: bold;">Northeastern University</span></p>
 

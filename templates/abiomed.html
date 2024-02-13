@@ -5,26 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abiomed</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
+         body {
+            padding: 70px;
+            font-family: 'Comic Sans MS';
             background-image: url("{{ url_for('static', filename='images/background.gif')}}");
             color: #fff;
+             justify-content: center;
+
         }
 
 
         header {
 
-            text-align: center;
-            padding: 10px 10px;
+            padding: 10px;
             /*background-color: #4CAF50; /* Green */
             color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
         }
 
-        header h1 a {
+        header h1 {
             color: #fff;
             text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
         }
 
         header p {
@@ -34,47 +40,44 @@
             margin-top: 10px;
         }
 
-        header p a {
-            margin: 0 10px;
+      
+
+
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
         }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
 
       
-        .container {
-                display: flex;
-                gap: 100px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */
+         .container {
+
+                display: flex; /* Adjust the gap between image container and content */
+                flex-direction: column;
                 justify-content: center;
-                 flex-direction: column;
-                
 
             }
 
-           .stacked-images {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
-  
-        .image-container {
-            display: flex;
-            gap: 10px; /* Adjust the gap between images */
-            justify-content: center;
-      
-            
+
+
+        .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
            
-
+            margin-left: 10%; /* Adjust padding as needed */
+            margin-right:  10%; 
+            max-width:100%;
+            width:80%;/* Adjust the size as needed */
+            height: auto;
+            text-align: center;
+            justify-content: center;
+          
         }
+
 
         .fade-in {
             opacity: 0;
@@ -92,46 +95,31 @@
 
         /* Adjust the styles as needed */
 
-           img {
-            max-width: 480px; /* Adjust the size as needed */
-            height: auto;
-            margin-right: 10px;
-            /*border-radius: 50%; */
-            margin-bottom: 10px;
-            margin-left : 50px;
-            border: 0px solid #4CAF50; /* Green */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
 
      
-        }
 
-
+  
         .content{
-            justify-content: center;
+            text-align: justify;
+            font-size: 25px;
             background-color: rgba(0, 0, 0, 0.5);
-            
-        }
-
-        .title-duration {
-            margin-bottom: 20px;
         }
 
 
         /* Delay each image by adding animation delay */
         .fade-in:nth-child(1) { animation-delay: 0.5s; }
-        .fade-in:nth-child(2) { animation-delay: 0.5s; }
+        .fade-in:nth-child(2) { animation-delay: 1s; }
+        .fade-in:nth-child(3) { animation-delay: 1.5s; }
+        .fade-in:nth-child(4) { animation-delay: 2s; }
 
-  
-        .image-caption {
-            text-align: center;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            width: 100%;
-            opacity: 1; /* Always visible */
-            transition: opacity 0.3s ease;
+         .fa-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
         }
+
+        /* Delay each image by adding animation delay */
+        .fa-in:nth-child(2) { animation-delay: 2s; }
+        
     
 
 
@@ -185,98 +173,43 @@
   color: red;
 }
 
-
-        /* Add more styles as needed */
-
-       
-
-  @media only screen and (max-width: 600px){
+     @media only screen and (max-width: 600px){
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url("{{ url_for('static', filename='images/background.gif') }}");  
-            color: #fff;
-            background-size:100%;
-        }   
+            padding: 20px;
+
+        } 
 
         
 
+     
         header {
 
-            text-align: center;
-            padding: 2px 2px;
-            /*background-color: #4CAF50; /* Green */
-            color: #fff;
+          padding: 10px;
+            font-size: 30px;
         }
 
         header h1 {
             color: #fff;
-            font-size: 20px;
+            font-size: 30px;
             text-decoration: none;
         }
 
-        h2 {
-            color: #fff;
-            font-size: 10px;
-            text-decoration: none;
-            font-size: 10px;
-        }
-
-        header p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1px;
-        }
-
-        header p a {
-            margin: 0 1px;
-        }
-
-        
-
-        img {
-              padding: 3px; /* Adjust padding as needed */
-             max-width: 300px; /* Adjust the size as needed */
-            max-height: 300px ;
-        
-
-        }
- 
-
-     
-
-            .content{
-         
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.5);
+       
+        .content{
             font-size: 13px;
 
-
         }
 
-            .container {
-                display: flex;
-                gap: 10px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */
-                flex-direction: column;
-                    
-
-            }
-        .image-container {
-            display: flex;
-            gap: 20px; /* Adjust the gap between images */
-            justify-content: center
       
-            
-           
-
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
 
 
-
-
+     
           .rhombus-container {
             display: flex;
             justify-content: center;
@@ -333,7 +266,7 @@
 <body>
         <header>
     
-        <h1>Data Science Coop - Abiomed inc(Johnson & Johnson)</h1>
+
          
         <div class="rhombus-container" >
             <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
@@ -355,6 +288,7 @@
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
+        <h1>Data Science Coop - Abiomed inc(Johnson & Johnson)</h1>
        
        
     </header>
@@ -362,27 +296,36 @@
     <div class= "fade-in">
     <div class="container">
 
-      <div class="image-container">
-                <img  src="{{ url_for('static', filename='images/abiomed_work_photo.jpg')}}"  alt="Image 1">
-                
-    </div>
-
+  
+   
+  
   
     <div class="content">
-                <p>
-                <ul>
-                        <li>Developed machine learning models to predict cardiac output in patients receiving mechanical circulatory support, utilizing in vivo highfrequency time-series device data obtained from pre-clinical and clinical experiments, achieving a 5.2% reduction in percentage error.</li>
-                       <li>Conducted research and implemented a Domain-Adversarial Neural Network (DANN) to forecast aortic pressure in different patient cohorts,
-leveraging computer simulations to generate high-volume data.</li>
-                        <li>Analyzed and fine-tuned the predicted probability values generated by a Deep Neural Network (DNN) model for predicting right heart
-failures to enhance the model's Brier skill score.</li>
-                         
-                 <li>Techinical stack :- Python, Pytorch, scikit-learn, MySQL, pandas, Github, Jupyter notebook, Linux</li>
-                </ul>
+         <img  class= "specific-image-inline" style="width:30%; margin-left: 35%; margin-right:  35%; " src="{{ url_for('static', filename='images/abiomed_work_photo.jpg')}}"  alt="Image 1">
+                
+                <p><span style="font-weight: bold;">
+               During my role as a Data Science Co-op at Abiomed, I had the opportunity to make significant contributions to cutting-edge projects, particularly focusing on their pioneering flagship product, the Impella pump. This revolutionary device stands at the forefront of biomedical innovation, and my involvement further deepened my appreciation for the intersection of data science and groundbreaking medical technologies.
 
-                </p>
-                <p>Location: <span style="font-weight: bold;"><i> Danvers,MA,USA </i> </span></p>
-                <p>Duration: <span style="font-weight: bold;">February 6th 2023 - September 1st 2023</span></p>
+           </span></p>
+           <p><span style="font-weight: bold;">
+                I developed  machine learning models aimed at predicting cardiac output in patients undergoing mechanical circulatory support. Utilizing high-frequency time-series data from the Impella pump, obtained through a combination of pre-clinical and clinical experiments, I successfully processed the data to eliminate noise and applied windowing techniques.  The outcomes demonstrated the superior predictive capabilities of my model, achieving a notable 5.2% reduction in percentage error compared to previous approaches.
+
+            </span></p>
+
+      <img  class= "specific-image-inline" style="width:60%; margin-left:20%; margin-right:20%;"  src="{{ url_for('static', filename='images/dan.png')}}"  alt="Image 1">      
+<p><span style="font-weight: bold;">
+           I had the opportunity to explore, conduct research, and implement a Domain-Adversarial Neural Network (DANN) for predicting aortic pressure in various patient cohorts. This involved utilizing computer simulations to generate extensive datasets. Domain Adversarial Networks (DANs) represent a category of machine learning models specifically crafted to tackle challenges related to domain adaptation. These networks aim to create data representations that remain consistent across diverse source domains, allowing for more robust generalization to unfamiliar domains. The incorporation of adversarial training, where the model learns to differentiate between source and target domains, plays a crucial role in mitigating domain shift issues and enhancing the transferability of acquired features across varied datasets.
+</span></p>
+
+
+<p><span style="font-weight: bold;">
+    I also had the opportunity to analyze and fine-tune the predicted probability values generated by a model which predicted right heart failures. I enhanced the model's Brier skill score to be within a targeted acceptable range.
+</span></p>
+               
+
+                </span></p>
+                <p><span style="font-weight: bold;">Location: <span style="font-weight: bold;"><i> Danvers,MA,USA </i> </span></p>
+                <p><span style="font-weight: bold;">Duration: <span style="font-weight: bold;">February 6th 2023 - September 1st 2023</span></p>
 
 
                   

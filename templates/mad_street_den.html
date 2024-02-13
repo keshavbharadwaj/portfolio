@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MadStreetDen</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
+       <style>
+         body {
+            padding: 70px;
+            font-family: 'Comic Sans MS';
             background-image: url("{{ url_for('static', filename='images/background.gif')}}");
             color: #fff;
+             justify-content: center;
+
         }
 
 
         header {
 
-            text-align: center;
-            padding: 10px 10px;
+            padding: 10px;
             /*background-color: #4CAF50; /* Green */
             color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
         }
 
-        header h1 a {
+        header h1 {
             color: #fff;
             text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
         }
 
         header p {
@@ -34,46 +40,44 @@
             margin-top: 10px;
         }
 
-        header p a {
-            margin: 0 10px;
+      
+
+
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
         }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
 
       
-        .container {
-                display: flex;
-                gap: 50px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */
+         .container {
+
+                display: flex; /* Adjust the gap between image container and content */
+                flex-direction: column;
                 justify-content: center;
-                  flex-direction: column;  
-                
 
             }
 
-           .stacked-images {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
-  
-        .image-container {
-            display: flex;
-            gap: 20px; /* Adjust the gap between images */
-            justify-content: center;
-            
+
+
+        .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
            
-
+            margin-left: 10%; /* Adjust padding as needed */
+            margin-right:  10%; 
+            max-width:100%;
+            width:80%;/* Adjust the size as needed */
+            height: auto;
+            text-align: center;
+            justify-content: center;
+          
         }
+
 
         .fade-in {
             opacity: 0;
@@ -91,33 +95,30 @@
 
         /* Adjust the styles as needed */
 
-        img {
-              padding: 3px; /* Adjust padding as needed */
-             max-width: 1000px; /* Adjust the size as needed */
-            height: auto;
-        
-
-        }
 
      
 
-
+  
         .content{
-            justify-content: center;
+            text-align: justify;
+            font-size: 25px;
             background-color: rgba(0, 0, 0, 0.5);
-            align-content:end;
-        }
-
-        .title-duration {
-            margin-bottom: 20px;
         }
 
 
         /* Delay each image by adding animation delay */
         .fade-in:nth-child(1) { animation-delay: 0.5s; }
-        .fade-in:nth-child(2) { animation-delay: 0.5s; }
+        .fade-in:nth-child(2) { animation-delay: 1s; }
+        .fade-in:nth-child(3) { animation-delay: 1.5s; }
+        .fade-in:nth-child(4) { animation-delay: 2s; }
 
-  
+         .fa-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* Delay each image by adding animation delay */
+        .fa-in:nth-child(2) { animation-delay: 2s; }
         
     
 
@@ -172,85 +173,34 @@
   color: red;
 }
 
-
-        /* Add more styles as needed */
-
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
- @media only screen and (max-width: 600px){
+     @media only screen and (max-width: 600px){
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url("{{ url_for('static', filename='images/background.gif') }}");  
-            color: #fff;
-            background-size:100%;
-        }   
+            padding: 20px;
+
+        } 
 
         
 
+     
         header {
 
-            text-align: center;
-            padding: 2px 2px;
-            /*background-color: #4CAF50; /* Green */
-            color: #fff;
+          padding: 10px;
+            font-size: 30px;
         }
 
         header h1 {
             color: #fff;
-            font-size: 20px;
+            font-size: 30px;
             text-decoration: none;
         }
 
-        h2 {
-            color: #fff;
-            font-size: 10px;
-            text-decoration: none;
-            font-size: 10px;
-        }
+       
+        .content{
+            font-size: 13px;
 
-        header p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1px;
-        }
-
-        header p a {
-            margin: 0 1px;
-        }
-
-        section {
-            max-width: 600px;
-            margin: 1px auto;
-            padding: 1px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 1px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
         }
 
       
-        img {
-              padding: 3px; /* Adjust padding as needed */
-             max-width: 400px; /* Adjust the size as needed */
-            height: auto;
-        
-
-        }
-        .bottom-right-links {
-            position: absolute;
-            bottom:5px;
-            right: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
         button-container {
             display: flex;
             justify-content: space-evenly;
@@ -258,45 +208,8 @@
             margin-top: 20px;
         }
 
-            .content{
-         
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            font-size: 13px;
 
-        }
-
-           .container {
-                display: flex;
-                gap: 10px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */  
-                flex-direction: column;  
-
-            }
-
-             .image-container {
-            display: flex;
-            gap: 20px; /* Adjust the gap between images */
-            justify-content: center;
-            
-           
-
-        }
-        .content-section {
-            display: flex;
-            align-items: top;
-            justify-content: center;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
-            margin-right: 5px;
-            margin-left : 5px;
-            margin-top: 10px;
-            font-size: 10px;
-        }
-
-
-
-
+     
           .rhombus-container {
             display: flex;
             justify-content: center;
@@ -344,12 +257,7 @@
 
         /* Add more styles as needed */
 
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
-
+       
 
 
         }
@@ -358,7 +266,7 @@
 <body>
         <header>
     
-        <h1>Machine Learning Engineer - Mad Street Den</h1>
+   
          
          <div class="rhombus-container" >
             <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
@@ -380,43 +288,33 @@
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
+             <h1>Machine Learning Engineer - Mad Street Den</h1>
        
     </header>
 
     <div class= "fade-in">
     <div class="container">
 
-      <div class="image-container">
-
-         
-            <div class="fade-in">
-               
-                  <img  src="{{ url_for('static', filename='images/elastic_search_recommendation.png')}}"  alt="Image 1">
-               
-                
-            </div>
-
-
-                  
-
-
-
-            
-      
-    </div>
+ 
 
   
     <div class="content">
-                <p>
-                <ul>
-                        <li>Developed and implemented machine learning models with PyTorch to generate tags for an Elastic search-driven recommendation system.</li>
-                       <li>Constructed indexing and search scripts, leveraging the generated tags, and fine-tuned the scoring function for improved optimization.</li>
-                        <li>Designed a Convolutional Neural Network (CNN) for vision-based tasks of identifying handwritten text and tables within images.</li>
-                          <li>Developed a language-based Support Vector Machine (SVM) classifier to distinguish between different question subjects and to categorize
-questions into either multiple-choice or other question types.</li>
-          <li>Designed and implemented data processing pipelines for client data and tag storage across Redshift, S3, Dynamo, and Redis databases and optimized the pipeline by eliminating redundant operations and fine-tuning it, resulting in a 15% reduction in response time.</li>
-                 <li>Techinical stack :- Python, Pytorch, Pytorch-lightning, OpenCV, scikit-learn, MySQL, PostgreSQL, pandas, Github, Jupyter notebook, Postman, Linux</li>
-                </ul>
+      <img  style = "width:100%" src="{{ url_for('static', filename='images/elastic_search_recommendation.png')}}"  alt="Image 1">
+        <p><span style="font-weight: bold;">I had the opportunity to work as a machine learning engineer at Mad Street Den, a cutting-edge tech company renowned for its pioneering work in developing AI-driven solutions that redefine the intersection of fashion, retail, and technology
+        </span></p>
+
+        <p><span style="font-weight: bold;">
+        As a machine learning engineer I was tasked with devloping machine learning models to generate tags for an Elastic search-driven recommendation system. Image-based inputs from clients would pass through our machine learning stack, comprising image classification models, OCR for text extraction, and NLP classification models to generate tags such as the presence of tables, geometric shapes, and content-related descriptors based on extracted text.
+        </span></p>
+       
+        <p><span style="font-weight: bold;">
+            I engaged with architectures such as CNNs and ResNets for generating vision based tags.  For language-based tag generation, I utilized algorithms and models like SVMs and employed LSTMs.
+            </span></p>
+
+         <p><span style="font-weight: bold;">
+          I played a role in crafting indexing and search scripts that utilized the generated tags, and I refined the scoring function to enhance optimization. Additionally, I created and implemented data processing pipelines for client data and tag storage, spanning across Redshift, S3, Dynamo, and Redis databases. My efforts in optimizing the pipeline, by eliminating redundancies and fine-tuning operations, led to a notable 15% reduction in response time.
+            </span></p>
+
 
                 </p>
                 <p>Location: <span style="font-weight: bold;"><i> Chennai,TamilNadu,India </i> </span></p>

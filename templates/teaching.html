@@ -6,25 +6,31 @@
     <title>Teaching Experience</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
+            padding: 70px;
+            font-family: 'Comic Sans MS';
             background-image: url("{{ url_for('static', filename='images/background.gif')}}");
             color: #fff;
+             justify-content: center;
+
         }
 
 
         header {
 
-            text-align: center;
-            padding: 10px 10px;
+            padding: 10px;
             /*background-color: #4CAF50; /* Green */
             color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
         }
 
-        header h1 a {
+        header h1 {
             color: #fff;
             text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
         }
 
         header p {
@@ -34,30 +40,44 @@
             margin-top: 10px;
         }
 
-        header p a {
-            margin: 0 10px;
+      
+
+
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
         }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
 
       
-        .container {
-                display: flex;
-                gap: 50px; /* Adjust the gap between image container and content */
-                padding: 2px; /* Padding around the container */
-                justify-content: center;
+         .container {
+
+                display: flex; /* Adjust the gap between image container and content */
                 flex-direction: column;
-                
+                justify-content: center;
 
             }
+
+
+
+
+        .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
+           
+            margin-left: 10%; /* Adjust padding as needed */
+            margin-right:  10%; 
+            max-width:100%;
+            width:80%;/* Adjust the size as needed */
+            height: auto;
+            text-align: center;
+            justify-content: center;
+          
+        }
+
 
            .stacked-images {
             display: flex;
@@ -105,16 +125,14 @@
  
 
 
+       
         .content{
             justify-content: center;
             background-color: rgba(0, 0, 0, 0.5);
-            align-content:end;
+            font-size: 25px;
         }
 
-        .title-duration {
-            margin-bottom: 20px;
-        }
-
+        
 
         /* Delay each image by adding animation delay */
         .fade-in:nth-child(1) { animation-delay: 0.5s; }
@@ -185,22 +203,17 @@
 
              @media only screen and (max-width: 600px){
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url("{{ url_for('static', filename='images/background.gif') }}");  
-            color: #fff;
-            background-size:100%;
-        }   
+            padding: 20px;
+
+        } 
 
         
 
+     
         header {
 
-            text-align: center;
-            padding: 2px 2px;
-            /*background-color: #4CAF50; /* Green */
-            color: #fff;
+          padding: 10px;
+            font-size: 30px;
         }
 
         header h1 {
@@ -209,34 +222,11 @@
             text-decoration: none;
         }
 
-        h2 {
-            color: #fff;
-            font-size: 10px;
-            text-decoration: none;
-            font-size: 10px;
-        }
+       
+        .content{
+            font-size: 13px;
 
-        header p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1px;
         }
-
-        header p a {
-            margin: 0 1px;
-        }
-
-        section {
-            max-width: 600px;
-            margin: 1px auto;
-            padding: 1px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 1px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-        }
-
         img {
             max-width: 320px; /* Adjust the size as needed */
             max-height: 380px;
@@ -350,8 +340,6 @@
 </head>
 <body>
         <header>
-    
-        <h1>EECE 2323 Teaching Experience</h1>
          
             <div class="rhombus-container" >
             <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
@@ -373,6 +361,8 @@
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
+
+           <h1>EECE 2323 Teaching Experience</h1>
        
     </header>
 
@@ -380,19 +370,19 @@
         <div class="container">
 
             <div class="image-container">
-                    <img  src="{{ url_for('static', filename='images/eece2323.svg')}}"alt="Image 1">
+                    <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/eece2323.svg')}}"alt="Image 1">
              </div>
 
   
             <div class="content">
-                <p>
+                <p><span style="font-weight: bold;"> 
                     <ul>
                           <li>Revised the lab manual through the adaptation of experiments to support the new RISC-V architecture and System Verilog. Supervised by Prof.Miriam Leeser, Prof. Emad Abolela and Prof. Tom Consi</li>
                           <li>Developed a computer architecture featuring an ALU, Instruction Decoder, and Memory, tailored for the RISC-V reduced instruction set</li>
                           <li>Assisted in debugging Verilog code using Xilinx Vivado. Monitored and supported students in lab sessions</li>
                           <li>Techinical stack :- system verilog, vivado, verilog, computer architecture</li>
                     </ul>
-                </p>
+                <span style="font-weight: bold;"> </p>
                 <p>Location: <span style="font-weight: bold;"><i> Northeastern University </i> </span></p>
                 <p>Duration: <span style="font-weight: bold;">May 2022 - December 2022</span></p>
 

@@ -5,27 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work Experience</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
+         body {
+            padding: 70px;
+            font-family: 'Comic Sans MS';
             background-image: url("{{ url_for('static', filename='images/background.gif')}}");
             color: #fff;
+             justify-content: center;
+
+
+
         }
 
 
-        header {
 
-            text-align: center;
-            padding: 10px 10px;
+           header {
+
+            padding: 10px;
             /*background-color: #4CAF50; /* Green */
             color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
         }
 
-        header h1 a {
+
+         header h1 {
             color: #fff;
             text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
         }
+
 
         header p {
             display: flex;
@@ -34,27 +45,18 @@
             margin-top: 10px;
         }
 
-        header p a {
-            margin: 0 10px;
+
+      
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
         }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-
-           .content-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            color: #fff;
-        }
+        
 
         /* Image button styles */
       .image-button {
@@ -63,13 +65,15 @@
             margin: 10px; /* Adjust margin as needed */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            text-align: center;
         }
 
         .image-button img {
-            max-width: 350px; /* Make the images bigger, adjust as needed */
+            max-width: 400px; /* Make the images bigger, adjust as needed */
             height: auto;
             border: 4px solid #4CAF50; /* Green */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -151,7 +155,11 @@
                 padding: 20px;
             }
 
-      @media only screen and (max-width: 600px){
+
+
+
+
+     @media only screen and (max-width: 600px){
         body {
             margin: 0;
             padding: 0;
@@ -177,33 +185,9 @@
             text-decoration: none;
         }
 
-        h2 {
-            color: #fff;
-            font-size: 10px;
-            text-decoration: none;
-            font-size: 10px;
-        }
+  
 
-        header p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1px;
-        }
 
-        header p a {
-            margin: 0 1px;
-        }
-
-        section {
-            max-width: 600px;
-            margin: 1px auto;
-            padding: 1px;
-            /*background-color: #444; /* Darker background */
-            border-radius: 1px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-        }
 
            .content-section {
             display: flex;
@@ -305,21 +289,12 @@
 
         /* Add more styles as needed */
 
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
-
-
-
-        }
+     
     </style>
 </head>
 <body>
         <header>
     
-        <h1>Work Experience</h1>
          
            <div class="rhombus-container" >
             <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
@@ -341,6 +316,8 @@
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
+
+            <h1>Work Experience</h1>
        
        
     </header>
@@ -351,14 +328,14 @@
             <a href="#">
                 <img src= "{{ url_for('static', filename='images/j_j_logo.jpg')}}" alt="Image 2">
             </a>
-            <div class="image-caption">Data Science Coop</div>
+            <div class="caption">Data Science Coop</div>
         </div>
 
         <div class="image-button" onclick="window.location.href='{{ url_for('msd') }}'" >
             <a href="#">
                 <img src="{{ url_for('static', filename='images/mad_logo.jpg')}}" alt="Image 1"> 
             </a>
-            <div class="image-caption">Machine Learning Engineer</div>
+            <div class="caption">Machine Learning Engineer</div>
         </div>
        
        
