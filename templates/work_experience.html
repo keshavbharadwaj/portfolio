@@ -161,12 +161,7 @@
 
      @media only screen and (max-width: 600px){
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url("{{ url_for('static', filename='images/background.gif') }}");  
-            color: #fff;
-            background-size:100%;
+            padding:0px;
         }   
 
         
@@ -275,6 +270,8 @@
             transform: translate(-50%, -50%) rotate(-45deg);
             color: #fff;
             font-size: 8.6px;
+            font-family: 'Arial', sans-serif;
+            font-weight:bold;
         }
 
 
@@ -328,14 +325,14 @@
             <a href="#">
                 <img src= "{{ url_for('static', filename='images/j_j_logo.jpg')}}" alt="Image 2">
             </a>
-            <div class="caption">Data Science Coop</div>
+            <div class="image-caption">Data Science Coop</div>
         </div>
 
         <div class="image-button" onclick="window.location.href='{{ url_for('msd') }}'" >
             <a href="#">
                 <img src="{{ url_for('static', filename='images/mad_logo.jpg')}}" alt="Image 1"> 
             </a>
-            <div class="caption">Machine Learning Engineer</div>
+            <div class="image-caption">Machine Learning Engineer</div>
         </div>
        
        

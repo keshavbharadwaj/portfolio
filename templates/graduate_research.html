@@ -224,7 +224,7 @@
 
    @media only screen and (max-width: 600px){
          body {
-            padding: 20px;
+            padding: 0px;
 
         } 
 
@@ -247,6 +247,19 @@
         .content{
             font-size: 13px;
 
+        }
+
+         .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
+           
+            margin-left: 0%; /* Adjust padding as needed */
+            margin-right:  0%; 
+            max-width:100%;
+            width:100%;/* Adjust the size as needed */
+            height: auto;
+            text-align: center;
+            justify-content: center;
+          
         }
 
 
@@ -363,6 +376,8 @@
             transform: translate(-50%, -50%) rotate(-45deg);
             color: #fff;
             font-size: 8.6px;
+            font-family: 'Arial', sans-serif;
+            font-weight:bold;
         }
 
 
@@ -455,7 +470,7 @@ My team introduced perception domain to COBRA, marking the initiation of a compr
 <p><span style="font-weight: bold;">
 The baseline model underwent deployment into the Jetson Orin, fortified by post-training optimization techniques employing OpenVINO and TensorRT. This strategic implementation resulted in a notable 2x reduction in memory usage and inference time for deployed vision models. Demonstrating a keen understanding of model performance metrics, we achieved a commendable accuracy with a 0.78 IoU score for the ground class.
 </span></p>
-<img  class = "specific-image-inline"  style = "width:80%" src="{{ url_for('static', filename='images/openvino.png')}}", alt="Image 8">
+<img  class = "specific-image-inline"   src="{{ url_for('static', filename='images/openvino.png')}}", alt="Image 8">
 </div>
 <p><span style="font-weight: bold;"> 
 The current focus lies in the implementation and fine-tuning of state-of-the-art instance segmentation models. Notably, efforts are underway to incorporate models like Mask2Former and YOSO (You Only Segment Once) into COBRA. 

@@ -175,7 +175,7 @@
 
      @media only screen and (max-width: 600px){
         body {
-            padding: 20px;
+            padding: 0px;
 
         } 
 
@@ -200,6 +200,18 @@
 
         }
 
+         .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
+           
+            margin-left: 0; /* Adjust padding as needed */
+            margin-right:  0; 
+            width:100%;/* Adjust the size as needed */
+
+            height: 200px;
+            text-align: center;
+            justify-content: center;
+          
+        }
       
         button-container {
             display: flex;
@@ -243,6 +255,8 @@
             transform: translate(-50%, -50%) rotate(-45deg);
             color: #fff;
             font-size: 8.6px;
+            font-family: 'Arial', sans-serif;
+            font-weight:bold;
         }
 
 
@@ -299,7 +313,7 @@
 
   
     <div class="content">
-      <img  style = "width:100%" src="{{ url_for('static', filename='images/elastic_search_recommendation.png')}}"  alt="Image 1">
+      <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/elastic_search_recommendation.png')}}"  alt="Image 1">
         <p><span style="font-weight: bold;">I had the opportunity to work as a machine learning engineer at Mad Street Den, a cutting-edge tech company renowned for its pioneering work in developing AI-driven solutions that redefine the intersection of fashion, retail, and technology
         </span></p>
 

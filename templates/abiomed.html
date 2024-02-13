@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+b<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -65,17 +65,29 @@
 
 
 
-        .specific-image-inline {
+        .specific-image-inline1 {
             /* Specific styling for the image with class "specific-image" */
            
-            margin-left: 10%; /* Adjust padding as needed */
-            margin-right:  10%; 
-            max-width:100%;
-            width:80%;/* Adjust the size as needed */
+           
             height: auto;
             text-align: center;
             justify-content: center;
+            width:30%; 
+            margin-left: 35%;
+            margin-right:  35%
           
+        }
+
+         .specific-image-inline2 {
+            /* Specific styling for the image with class "specific-image" */
+           
+           
+            height: auto;
+            text-align: center;
+            justify-content: center;
+            width:60%; 
+            margin-left:20%; 
+            margin-right:20%;
         }
 
 
@@ -175,7 +187,7 @@
 
      @media only screen and (max-width: 600px){
         body {
-            padding: 20px;
+            padding: 0px;
 
         } 
 
@@ -200,6 +212,32 @@
 
         }
 
+
+         .specific-image-inline1 {
+            /* Specific styling for the image with class "specific-image" */
+           
+           
+            height: auto;
+            text-align: center;
+            justify-content: center;
+            width:60%; 
+            margin-left: 20%;
+            margin-right:  20%
+          
+        }
+
+         .specific-image-inline2 {
+            /* Specific styling for the image with class "specific-image" */
+           
+           
+            height: auto;
+            text-align: center;
+            justify-content: center;
+            width:100%; 
+            margin-left:0%; 
+            margin-right:0%;
+        }
+
       
         button-container {
             display: flex;
@@ -210,7 +248,7 @@
 
 
      
-          .rhombus-container {
+         .rhombus-container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -243,6 +281,8 @@
             transform: translate(-50%, -50%) rotate(-45deg);
             color: #fff;
             font-size: 8.6px;
+            font-family: 'Arial', sans-serif;
+            font-weight:bold;
         }
 
 
@@ -254,7 +294,6 @@
   color: red;
 }
 }
-
         /* Add more styles as needed */
 
        
@@ -301,7 +340,7 @@
   
   
     <div class="content">
-         <img  class= "specific-image-inline" style="width:30%; margin-left: 35%; margin-right:  35%; " src="{{ url_for('static', filename='images/abiomed_work_photo.jpg')}}"  alt="Image 1">
+         <img  class= "specific-image-inline1" src="{{ url_for('static', filename='images/abiomed_work_photo.jpg')}}"  alt="Image 1">
                 
                 <p><span style="font-weight: bold;">
                During my role as a Data Science Co-op at Abiomed, I had the opportunity to make significant contributions to cutting-edge projects, particularly focusing on their pioneering flagship product, the Impella pump. This revolutionary device stands at the forefront of biomedical innovation, and my involvement further deepened my appreciation for the intersection of data science and groundbreaking medical technologies.
@@ -312,7 +351,7 @@
 
             </span></p>
 
-      <img  class= "specific-image-inline" style="width:60%; margin-left:20%; margin-right:20%;"  src="{{ url_for('static', filename='images/dan.png')}}"  alt="Image 1">      
+      <img  class= "specific-image-inline2"  src="{{ url_for('static', filename='images/dan.png')}}"  alt="Image 1">      
 <p><span style="font-weight: bold;">
            I had the opportunity to explore, conduct research, and implement a Domain-Adversarial Neural Network (DANN) for predicting aortic pressure in various patient cohorts. This involved utilizing computer simulations to generate extensive datasets. Domain Adversarial Networks (DANs) represent a category of machine learning models specifically crafted to tackle challenges related to domain adaptation. These networks aim to create data representations that remain consistent across diverse source domains, allowing for more robust generalization to unfamiliar domains. The incorporation of adversarial training, where the model learns to differentiate between source and target domains, plays a crucial role in mitigating domain shift issues and enhancing the transferability of acquired features across varied datasets.
 </span></p>
