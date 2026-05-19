@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Experience</title>
+    <title>Teaching Experience</title>
     <style>
-         body {
+        body {
             padding: 70px;
             font-family: 'Comic Sans MS';
             background-image: url("static/images/background.gif");
             color: #fff;
              justify-content: center;
 
-
-
         }
 
 
-
-           header {
+        header {
 
             padding: 10px;
             /*background-color: #4CAF50; /* Green */
@@ -28,15 +25,13 @@
               text-align: center;
         }
 
-
-         header h1 {
+        header h1 {
             color: #fff;
             text-decoration: none;
             font-family: "Comic Sans MS";
 
 
         }
-
 
         header p {
             display: flex;
@@ -45,8 +40,9 @@
             margin-top: 10px;
         }
 
-
       
+
+
         .caption {
             text-align: center;
             background: rgba(0, 0, 0, 0.7);
@@ -56,52 +52,96 @@
         
         }
 
-        
 
-        /* Image button styles */
-      .image-button {
-            position: relative;
-            overflow: hidden;
-            margin: 10px; /* Adjust margin as needed */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            text-align: center;
-        }
+      
+         .container {
 
-        .image-button img {
-            max-width: 400px; /* Make the images bigger, adjust as needed */
+                display: flex; /* Adjust the gap between image container and content */
+                flex-direction: column;
+                justify-content: center;
+
+            }
+
+
+
+
+        .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
+           
+            margin-left: 10%; /* Adjust padding as needed */
+            margin-right:  10%; 
+            max-width:100%;
+            width:80%;/* Adjust the size as needed */
             height: auto;
-            border: 4px solid #4CAF50; /* Green */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .image-caption {
-            text-align: center;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            width: 100%;
-            opacity: 1; /* Always visible */
-            transition: opacity 0.3s ease;
-        }
-
-        .image-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            justify-content: center;
+          
         }
 
 
-        /* Example styles for a centered container */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
-            border-radius: 10px;
+           .stacked-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
   
+        .image-container {
+            display: flex;
+            gap: 20px; /* Adjust the gap between images */
+            justify-content: center;
+
+      
+            
+           
+
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Adjust the styles as needed */
+
+        img {
+              padding: 3px; /* Adjust padding as needed */
+             max-width: 600px; /* Adjust the size as needed */
+            height: auto;
+        
+
+        }
+
+
+ 
+
+
+       
+        .content{
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 25px;
+        }
+
+        
+
+        /* Delay each image by adding animation delay */
+        .fade-in:nth-child(1) { animation-delay: 0.5s; }
+        
+
+  
+        
+    
+
 
           .rhombus-container {
             display: flex;
@@ -137,8 +177,14 @@
             color: #fff;
             font-size: 14px;
         }
-
-
+          .links {
+            margin-top: 10px;
+        }
+           img.logo {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+        }
 
         a:link, a:visited{
   padding: 10px 10px;
@@ -150,28 +196,20 @@
 
         /* Add more styles as needed */
 
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
 
-
-
-
-
-     @media only screen and (max-width: 600px){
+             @media only screen and (max-width: 600px){
         body {
-            padding:0px;
-        }   
+            padding: 0px;
+
+        } 
 
         
 
+     
         header {
 
-            text-align: center;
-            padding: 2px 2px;
-            /*background-color: #4CAF50; /* Green */
-            color: #fff;
+          padding: 10px;
+            font-size: 30px;
         }
 
         header h1 {
@@ -180,61 +218,71 @@
             text-decoration: none;
         }
 
-  
+       
+        .content{
+            font-size: 13px;
 
+        }
+        img {
+            max-width: 320px; /* Adjust the size as needed */
+            max-height: 380px;
+            margin-right: 0px;
+            /*border-radius: 50%; */
+            margin-bottom: 10px;
+            border: 0px solid #4CAF50; /* Green */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
+        img.logo {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+        }
 
-           .content-section {
+        .bottom-right-links {
+            position: absolute;
+            bottom:5px;
+            right: 10px;
             display: flex;
-             flex-direction: column;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+            .content{
+         
             justify-content: center;
-            align-items: center;
-            padding: 40px;
-            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 13px;
 
         }
 
-      
+           .container {
+                display: flex;
+                gap: 10px; /* Adjust the gap between image container and content */
+                padding: 2px; /* Padding around the container */  
+                flex-direction: column;  
 
-
-        /* Image button styles */
-  
-        }
-
-        .image-button img {
-            max-width: 200px; /* Make the images bigger, adjust as needed */
-            max-height: 300px;
-            border: 4px solid #4CAF50; /* Green */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-              margin-bottom: 10px;
-        }
-
-        .image-caption {
-            text-align: center;
-            padding: 2px;
-            background: rgba(0, 0, 0, 0.7);
-            opacity: 1; /* Always visible */
-            transition: opacity 0.3s ease;
-            font-size: 10px;
-            margin-bottom: 1px;
-        }
-
-        .image-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-
-        }
-
-
-        /* Example styles for a centered container */
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 5px;
+            }
+        .content-section {
+            display: flex;
+            align-items: top;
+            justify-content: center;
+            padding: 10px;
             background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
-            border-radius: 5px;
+            margin-right: 5px;
+            margin-left : 5px;
+            margin-top: 10px;
+            font-size: 10px;
         }
+
+
 
 
           .rhombus-container {
@@ -282,18 +330,16 @@
   text-decoration: none;
   color: red;
 }
-}
 
-        /* Add more styles as needed */
 
-     
+
+        }
     </style>
 </head>
 <body>
         <header>
-    
          
-           <div class="rhombus-container" >
+            <div class="rhombus-container" >
             <div class="rhombus" id="rhombus1" onclick="window.location.href='index.html'">
                 <div class="rhombus-text">Home</div>
             </div>
@@ -314,33 +360,36 @@
             </div>
         </div>
 
-            <h1>Work Experience</h1>
-       
+           <h1>EECE 2323 Teaching Experience</h1>
        
     </header>
 
+<div class= "fade-in">
+        <div class="container">
 
-    <div class="content-section">
-         <div class="image-button" onclick="window.location.href='abiomed.html'">
-            <a href="#">
-                <img src= "static/images/j_j_logo.jpg" alt="Image 2">
-            </a>
-            <div class="image-caption">Data Science Coop</div>
-        </div>
+            <div class="image-container">
+                    <img  class = "specific-image-inline" src="static/images/eece2323.svg"alt="Image 1">
+             </div>
 
-        <div class="image-button" onclick="window.location.href='mad_street_den.html'" >
-            <a href="#">
-                <img src="static/images/mad_logo.jpg" alt="Image 1"> 
-            </a>
-            <div class="image-caption">Machine Learning Engineer</div>
-        </div>
-       
-       
-    </div>
+  
+            <div class="content">
+                <p><span style="font-weight: bold;"> 
+                    <ul>
+                          <li>Revised the lab manual through the adaptation of experiments to support the new RISC-V architecture and System Verilog. Supervised by Prof.Miriam Leeser, Prof. Emad Abolela and Prof. Tom Consi</li>
+                          <li>Developed a computer architecture featuring an ALU, Instruction Decoder, and Memory, tailored for the RISC-V reduced instruction set</li>
+                          <li>Assisted in debugging Verilog code using Xilinx Vivado. Monitored and supported students in lab sessions</li>
+                          <li>Techinical stack :- system verilog, vivado, verilog, computer architecture</li>
+                    </ul>
+                <span style="font-weight: bold;"> </p>
+                <p>Location: <span style="font-weight: bold;"><i> Northeastern University </i> </span></p>
+                <p>Duration: <span style="font-weight: bold;">May 2022 - December 2022</span></p>
 
  
+            </div>
+    </div>
+</div>
 
-    <!-- Links at the bottom right -->
+
 
 
 </body>
