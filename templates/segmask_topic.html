@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segmask Frustum Pointpillar</title>
+    <style>
+     
+
+
+
+        body {
+            padding: 70px;
+            font-family: 'Comic Sans MS';
+            background-image: url("{{ url_for('static', filename='images/background.gif')}}");
+            color: #fff;
+             justify-content: center;
+
+
+
+        }
+
+
+        header {
+
+            padding: 10px;
+            /*background-color: #4CAF50; /* Green */
+            color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
+        }
+
+        header h1 {
+            color: #fff;
+            text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
+        }
+
+        header p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        header p a {
+            margin: 0 10px;
+        }
+
+
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
+        }
+
+  
+
+         figure {
+      text-align: center;
+    }
+      
+        .container {
+
+                display: flex; /* Adjust the gap between image container and content */
+                flex-direction: column;
+                justify-content: center;
+
+            }
+
+        .stacked-images {
+            display: flex;
+            flex-direction: column;
+           
+        }
+
+
+  
+        .image-container {
+            display: flex;;
+            gap:75px;
+
+         
+             /* Adjust the gap between images */
+
+            
+           
+
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Adjust the styles as needed */
+
+        img {
+            max-width: 200px; /* Adjust the size as needed */
+            height: auto;
+            margin-bottom: 10px; /* Adjust the margin between images */
+           
+
+        }
+
+        .specific-image {
+            /* Specific styling for the image with class "specific-image" */
+           
+            padding: 3px; /* Adjust padding as needed */
+             max-width: 210px; /* Adjust the size as needed */
+            height: auto;
+            margin-top: 30px;
+            margin-bottom: 5px;
+          
+        }
+
+          .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
+           
+            padding: 10px; /* Adjust padding as needed */
+            max-width:100%;/* Adjust the size as needed */
+            height: auto;
+            text-align: center;
+            justify-content: center;
+          
+        }
+
+        .content{
+            text-align: justify;
+            font-size: 25px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* Delay each image by adding animation delay */
+        .fade-in:nth-child(1) { animation-delay: 2s; }
+        .fade-in:nth-child(2) { animation-delay: 1.5s; }
+        .fade-in:nth-child(3) { animation-delay: 1s; }
+        .fade-in:nth-child(4) { animation-delay: 0.5s; }
+         .fade-in:nth-child(5) { animation-delay: 2s; }
+        .fade-in:nth-child(6) { animation-delay: 1.5s; }
+        .fade-in:nth-child(7) { animation-delay: 1s; }
+        .fade-in:nth-child(8) { animation-delay: 0.5s; }
+    
+
+
+        .fad-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* Delay each image by adding animation delay */
+        .fad-in:nth-child(2) { animation-delay: 2.5s; }
+        .fad-in:nth-child(3) { animation-delay: 3s; }
+        .fad-in:nth-child(4) { animation-delay: 3.5s; }
+        .fad-in:nth-child(5) { animation-delay: 4s; }
+
+         .fa-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* Delay each image by adding animation delay */
+        .fa-in:nth-child(2) { animation-delay: 4s; }
+
+
+
+          .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 90px;
+            height: 140px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 20px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 14px;
+        }
+          .links {
+            margin-top: 10px;
+        }
+           img.logo {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+        }
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+
+
+
+
+
+
+   @media only screen and (max-width: 600px){
+        body {
+            padding: 0px;
+        }   
+
+             
+     header {
+
+            padding: 10px;
+            font-size: 30px;
+           
+        }
+
+        
+
+        header h1 {
+            color: #fff;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+
+
+  
+        .image-container {
+            gap: 20px; /* Adjust the gap between images */
+            
+
+        }
+
+       
+
+        /* Adjust the styles as needed */
+
+        img {
+            max-width: 75px; /* Adjust the size as needed */
+            margin-bottom: 2px; /* Adjust the margin between images */
+           
+
+        }
+
+        .caption {
+             font-size: 12px;
+        
+        }
+
+        .specific-image {
+            /* Specific styling for the image with class "specific-image" */
+           
+            padding: 1px; /* Adjust padding as needed */
+             max-width: 75px; /* Adjust the size as needed */
+          
+        }
+        .content{
+            font-size: 13px;
+
+        }
+
+
+  
+
+
+        .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 43px;
+            height: 72px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 8px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 8.6px;
+            font-family: 'Arial', sans-serif;
+            font-weight:bold;
+        }
+
+
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+}
+
+        /* Add more styles as needed */
+
+        }
+    </style>
+</head>
+<body>
+        <header>
+        
+         
+           <div class="rhombus-container" >
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
+                <div class="rhombus-text">Home</div>
+            </div>
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='{{ url_for('work') }}'">
+                <div class="rhombus-text">Work Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='{{ url_for('research') }}'">
+                <div class="rhombus-text">Research & Teaching Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='{{ url_for('projects') }}'">
+                <div class="rhombus-text">Projects</div>
+            </div>
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='{{ url_for('patents') }}'">
+                <div class="rhombus-text">Patents</div>
+            </div>
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='{{ url_for('education') }}'">
+                <div class="rhombus-text">Education</div>
+            </div>
+        </div>
+       
+          <h1>Segmask Frustum PointPillar for 3D Object Detection</h1>
+    </header>
+
+    <div class="container">
+      <div class="image-container">
+
+        <div class="stacked-images">
+            <div class="fade-in">
+                <img src="{{ url_for('static', filename='images/seg_4.png')}}" alt="Image 1">
+                
+            </div>
+
+            <div class="fade-in">
+                <img  src="{{ url_for('static', filename='images/seg_3.png')}}" alt="Image 2">
+                <p class="caption">Filtering + Masking</p>
+                
+            </div>
+
+            <div class="fade-in">
+                <img  src="{{ url_for('static', filename='images/seg_2.png')}}" alt="Image 3">
+                <p class="caption">Segmentation mask</p>
+            </div>
+
+            <div class="fade-in">
+                <img  src="{{ url_for('static', filename='images/seg_1.png')}}" alt="Image 4">
+                <p class="caption">YOLO 2D Object Detection</p>
+            </div>
+
+        </div>
+
+         <div class="fad-in">
+            <img  class = "specific-image" src="{{ url_for('static', filename='images/seg_5.png')}}" alt="Image 5">
+            <p class="caption">Pillar Feature Net</p>
+        </div>
+
+         <div class="fad-in">
+            <img class = "specific-image" src="{{ url_for('static', filename='images/seg_6.png')}}" alt="Image 6">
+            <p class="caption">Pseudo Image Generation</p>
+        </div>
+
+        <div class="fad-in">
+            <img class = "specific-image" src="{{ url_for('static', filename='images/seg_7.png')}}" alt="Image 7">
+            <p class="caption">Backbone + Detection Head</p>
+        </div>
+
+         <div class="fad-in">
+            <img class = "specific-image" src="{{ url_for('static', filename='images/seg_8.png')}}" alt="Image 8">
+            <p class="caption">3D Bounding Box Prediction</p>
+        </div>
+
+       
+    </div>
+    <div class="fa-in">
+    <div class="content">
+             <p><span style="font-weight: bold;"> Aim: Adopt a multi-sensor approach to detect 3D objects from RGB + LiDAR data by leveraging a robust 2D object detector like YOLOv7 along with a novel segmentation mask on top of the Frustum PointPillar approach to reduce the search space in 3D detection.</span></p>
+
+             <p><span style="font-weight: bold;"> Intuition: 2D image recognition tasks like object detection and instance segmentation, have made significant strides lately but beyond obtaining 2D bounding boxes or pixel masks, 3D comprehension is avidly sought in many major applications including autonomous driving and augmented reality.</span></p>
+
+    </div>
+    <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/frustum.png')}}" alt="Image 8">
+    <div class="content">
+
+             <p><span style="font-weight: bold;"> Approach: In light of this, there is an increasing demand for 3D object detection models that classify accurately and estimate the oriented 3D bounding boxes of actual objects using multi-sensor data. This work develops on top of Frustum PointPillar by leveraging robust 2D object detectors as priors to build a 3D viewing frustum that predicts a 3D bounding box of the object from the points in the frustum. </span></p>
+                    
+                <p><ul>
+                      <li>Modified the existing Frustum-PointPillars architecture which uses images and point-cloud data (sensor fusion camera and LiDAR) by replacing the naive Gaussian mask with a pre-trained PSPNet segmentation mask and achieved a mAP score of 78.01 (+3%)for cars class in the KITTI-Hard dataset.</li>
+                      <li>Established a real-time detection by adding a YOLOv7 2D detection layer instead of using KITTI ground truths.</li>
+                      <li>The future scope of this work is to improve 2D detection in low-light conditions using data from RGB and LiDAR and to avoid outliers, it is essential to remove reflections in surfaces such as glasses and windows.</li>
+                </ul></p>
+    </div>
+       <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/birds_eye_view.png')}}" alt="Image 8">
+       <div class="content">
+            <p>SegMask FP model output visualized in KITTI-hard dataset for cars that shows 3D bounding boxes on 2D image and this is also the bird's eye view for the same.</p>
+                <p>Course: <span style="font-weight: bold;"><i> Advanced Computer Vision </i> </span></p>
+                <p>University: <span style="font-weight: bold;">Northeastern University</span></p>
+
+
+                
+                 <div class="links">
+                      <a href="https://github.com/keshavbharadwaj/frustum_pointnets_pytorch" target="_blank">
+                        <img class ="logo" src="{{ url_for('static', filename='images/github_logo_2.png')}}"  alt="github logo" height="20">
+                        Github
+                    </a>
+
+                   <a href="{{url_for('static', filename='documents/seg_mask_frustum_point_pillar.pdf') }}" target="_blank">
+                        <img class = "logo" src="{{ url_for('static', filename='images/pdf_logo.png')}}"  alt="github logo" height="20">
+                        Report
+                    </a>
+                </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+
+ 
+
+    <!-- Links at the bottom right -->
+
+
+</body>
+
+
+</html>

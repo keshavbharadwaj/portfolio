@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abiomed</title>
+    <style>
+         body {
+            padding: 70px;
+            font-family: 'Comic Sans MS';
+            background-image: url("{{ url_for('static', filename='images/background.gif')}}");
+            color: #fff;
+             justify-content: center;
+
+        }
+
+
+        header {
+
+            padding: 10px;
+            /*background-color: #4CAF50; /* Green */
+            color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
+        }
+
+        header h1 {
+            color: #fff;
+            text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
+        }
+
+        header p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+      
+
+
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
+        }
+
+
+      
+         .container {
+
+                display: flex; /* Adjust the gap between image container and content */
+                flex-direction: column;
+                justify-content: center;
+
+            }
+
+
+
+
+        .specific-image-inline1 {
+            /* Specific styling for the image with class "specific-image" */
+           
+           
+            height: auto;
+            text-align: center;
+            justify-content: center;
+            width:30%; 
+            margin-left: 35%;
+            margin-right:  35%
+          
+        }
+
+         .specific-image-inline2 {
+            /* Specific styling for the image with class "specific-image" */
+           
+           
+            height: auto;
+            text-align: center;
+            justify-content: center;
+            width:60%; 
+            margin-left:20%; 
+            margin-right:20%;
+        }
+
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Adjust the styles as needed */
+
+
+     
+
+  
+        .content{
+            text-align: justify;
+            font-size: 25px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* Delay each image by adding animation delay */
+        .fade-in:nth-child(1) { animation-delay: 0.5s; }
+        .fade-in:nth-child(2) { animation-delay: 1s; }
+        .fade-in:nth-child(3) { animation-delay: 1.5s; }
+        .fade-in:nth-child(4) { animation-delay: 2s; }
+
+         .fa-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* Delay each image by adding animation delay */
+        .fa-in:nth-child(2) { animation-delay: 2s; }
+        
+    
+
+
+          .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 90px;
+            height: 140px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 20px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 14px;
+        }
+          .links {
+            margin-top: 10px;
+        }
+           img.logo {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+        }
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+
+     @media only screen and (max-width: 600px){
+        body {
+            padding: 0px;
+
+        } 
+
+        
+
+     
+        header {
+
+          padding: 10px;
+            font-size: 30px;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+       
+        .content{
+            font-size: 13px;
+
+        }
+
+
+         .specific-image-inline1 {
+            /* Specific styling for the image with class "specific-image" */
+           
+           
+            height: auto;
+            text-align: center;
+            justify-content: center;
+            width:60%; 
+            margin-left: 20%;
+            margin-right:  20%
+          
+        }
+
+         .specific-image-inline2 {
+            /* Specific styling for the image with class "specific-image" */
+           
+           
+            height: auto;
+            text-align: center;
+            justify-content: center;
+            width:100%; 
+            margin-left:0%; 
+            margin-right:0%;
+        }
+
+      
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+
+     
+         .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 43px;
+            height: 72px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 8px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 8.6px;
+            font-family: 'Arial', sans-serif;
+            font-weight:bold;
+        }
+
+
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+}
+        /* Add more styles as needed */
+
+       
+
+
+        }
+    </style>
+</head>
+<body>
+        <header>
+    
+
+         
+        <div class="rhombus-container" >
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
+                <div class="rhombus-text">Home</div>
+            </div>
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='{{ url_for('work') }}'">
+                <div class="rhombus-text">Work Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='{{ url_for('research') }}'">
+                <div class="rhombus-text">Research & Teaching Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='{{ url_for('projects') }}'">
+                <div class="rhombus-text">Projects</div>
+            </div>
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='{{ url_for('patents') }}'">
+                <div class="rhombus-text">Patents</div>
+            </div>
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='{{ url_for('education') }}'">
+                <div class="rhombus-text">Education</div>
+            </div>
+        </div>
+        <h1>Data Science Coop - Abiomed inc(Johnson & Johnson)</h1>
+       
+       
+    </header>
+
+    <div class= "fade-in">
+    <div class="container">
+
+  
+   
+  
+  
+    <div class="content">
+         <img  class= "specific-image-inline1" src="{{ url_for('static', filename='images/abiomed_work_photo.jpg')}}"  alt="Image 1">
+                
+                <p><span style="font-weight: bold;">
+               During my role as a Data Science Co-op at Abiomed, I had the opportunity to make significant contributions to cutting-edge projects, particularly focusing on their pioneering flagship product, the Impella pump. This revolutionary device stands at the forefront of biomedical innovation, and my involvement further deepened my appreciation for the intersection of data science and groundbreaking medical technologies.
+
+           </span></p>
+           <p><span style="font-weight: bold;">
+                I developed  machine learning models aimed at predicting cardiac output in patients undergoing mechanical circulatory support. Utilizing high-frequency time-series data from the Impella pump, obtained through a combination of pre-clinical and clinical experiments, I successfully processed the data to eliminate noise and applied windowing techniques.  The outcomes demonstrated the superior predictive capabilities of my model, achieving a notable 5.2% reduction in percentage error compared to previous approaches.
+
+            </span></p>
+
+      <img  class= "specific-image-inline2"  src="{{ url_for('static', filename='images/dan.png')}}"  alt="Image 1">      
+<p><span style="font-weight: bold;">
+           I had the opportunity to explore, conduct research, and implement a Domain-Adversarial Neural Network (DANN) for predicting aortic pressure in various patient cohorts. This involved utilizing computer simulations to generate extensive datasets. Domain Adversarial Networks (DANs) represent a category of machine learning models specifically crafted to tackle challenges related to domain adaptation. These networks aim to create data representations that remain consistent across diverse source domains, allowing for more robust generalization to unfamiliar domains. The incorporation of adversarial training, where the model learns to differentiate between source and target domains, plays a crucial role in mitigating domain shift issues and enhancing the transferability of acquired features across varied datasets.
+</span></p>
+
+
+<p><span style="font-weight: bold;">
+    I also had the opportunity to analyze and fine-tune the predicted probability values generated by a model which predicted right heart failures. I enhanced the model's Brier skill score to be within a targeted acceptable range.
+</span></p>
+               
+
+                </span></p>
+                <p><span style="font-weight: bold;">Location: <span style="font-weight: bold;"><i> Danvers,MA,USA </i> </span></p>
+                <p><span style="font-weight: bold;">Duration: <span style="font-weight: bold;">February 6th 2023 - September 1st 2023</span></p>
+
+
+                  
+             
+             </div>
+    </div>
+</div>
+
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Question Answering</title>
+    <style>
+        body {
+            padding: 70px;
+            font-family: 'Comic Sans MS';
+            background-image: url("{{ url_for('static', filename='images/background.gif')}}");
+            color: #fff;
+             justify-content: center;
+
+        }
+
+
+        header {
+
+            padding: 10px;
+            /*background-color: #4CAF50; /* Green */
+            color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
+        }
+
+        header h1 {
+            color: #fff;
+            text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
+        }
+
+        header p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+      
+
+
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
+        }
+
+
+      
+         .container {
+
+                display: flex; /* Adjust the gap between image container and content */
+                flex-direction: column;
+                justify-content: center;
+
+            }
+
+
+
+
+        .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
+           
+            margin-left: 10%; /* Adjust padding as needed */
+            margin-right:  10%; 
+            max-width:100%;
+            width:80%;/* Adjust the size as needed */
+            height: auto;
+            text-align: center;
+            justify-content: center;
+          
+        }
+
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Adjust the styles as needed */
+
+
+     
+
+  
+        .content{
+            text-align: justify;
+            font-size: 25px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* Delay each image by adding animation delay */
+        .fade-in:nth-child(1) { animation-delay: 0.5s; }
+        .fade-in:nth-child(2) { animation-delay: 1s; }
+        .fade-in:nth-child(3) { animation-delay: 1.5s; }
+        .fade-in:nth-child(4) { animation-delay: 2s; }
+
+         .fa-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* Delay each image by adding animation delay */
+        .fa-in:nth-child(2) { animation-delay: 2s; }
+        
+    
+
+
+          .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 90px;
+            height: 140px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 20px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 14px;
+        }
+          .links {
+            margin-top: 10px;
+        }
+           img.logo {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+        }
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+
+     @media only screen and (max-width: 600px){
+        body {
+            padding: 0px;
+
+        } 
+
+        
+
+     
+        header {
+
+          padding: 10px;
+            font-size: 30px;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+       
+        .content{
+            font-size: 13px;
+
+        }
+
+      
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+         .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
+           
+            margin-left: 0%; /* Adjust padding as needed */
+            margin-right:  0%; 
+            max-width:100%;
+            width:100%;/* Adjust the size as needed */
+            height: 150px;
+            text-align: center;
+            justify-content: center;
+          
+        }
+
+
+     
+          .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 43px;
+            height: 72px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 8px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 8.6px;
+            font-family: 'Arial', sans-serif;
+            font-weight:bold;
+        }
+
+
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+}
+
+
+        }
+    </style>
+</head>
+<body>
+        <header>
+    
+           <div class="rhombus-container" >
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
+                <div class="rhombus-text">Home</div>
+            </div>
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='{{ url_for('work') }}'">
+                <div class="rhombus-text">Work Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='{{ url_for('research') }}'">
+                <div class="rhombus-text">Research & Teaching Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='{{ url_for('projects') }}'">
+                <div class="rhombus-text">Projects</div>
+            </div>
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='{{ url_for('patents') }}'">
+                <div class="rhombus-text">Patents</div>
+            </div>
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='{{ url_for('education') }}'">
+                <div class="rhombus-text">Education</div>
+            </div>
+        </div>
+
+        <h1>Visual Question Answering</h1>
+         
+       
+    </header>
+
+    <div class="container">
+ <!--      <div class="image-container">
+
+        <div class="stacked-images">
+            <div class="fade-in">
+                <img src= "{{ url_for('static', filename='images/vqa_1.png')}}"  alt="Image 1">
+                <img  src="{{ url_for('static', filename='images/vqa_2.png')}}" alt="Image 2">
+                
+            </div>
+                
+        </div>
+
+        <div class="fade-in">
+        <div class="stacked-images">
+            
+                <img class = "specific-image2" src= "{{ url_for('static', filename='images/vqa_3.png')}}"  alt="Image 1">
+                <img class = "specific-image2" src="{{ url_for('static', filename='images/vqa_4.png')}}"  alt="Image 2">
+                
+                
+            </div>
+                
+        </div>
+
+
+         <div class="fade-in">
+            <img  class = "specific-image" src= "{{ url_for('static', filename='images/vqa_5.png')}}" alt="Image 5">
+        </div>
+
+        <div class="fade-in">
+        <div class="stacked-images">
+            
+                <img src="{{ url_for('static', filename='images/vqa_6.png')}}" alt="Image 1">
+                <img  src="{{ url_for('static', filename='images/vqa_7.png')}}"  alt="Image 2">
+                
+            </div>
+
+       
+    </div>
+</div> -->
+
+
+    <div class="fa-in">
+     <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/vqa_base_line.png')}}" alt="Image 8">
+    <div class="content">
+             <p><span style="font-weight: bold;">Aim: The goal of a Visual Question Answering (VQA) system is to empower machines with the capability to comprehend and respond to natural language questions about visual content, seamlessly integrating computer vision for image understanding and natural language processing (NLP) for effective communication.</span></p>
+              <p><span style="font-weight: bold;">
+             Baseline: In our initial approach, we employ an LSTM Q+I model as the baseline. This model incorporates question embeddings generated by a one-hidden-layer LSTM, resulting in a 1024-dimensional embedding. Simultaneously, image embeddings are derived from a pre-trained VGG network, yielding a 4096-dimensional representation. These embeddings are then combined and fed into a fully connected neural network classifier with two hidden layers. The model is trained end-to-end with cross-entropy loss, keeping VGGNet parameters frozen.
+            </span></p>
+</div>
+</div>
+<div class= "fa-in"> 
+  <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/lxmert_architecture.png')}}" alt="Image 8">
+ <div class="content">
+       <p><span style="font-weight: bold;">Transformer Model: Learning Cross-Modality Encoder Representations From Transformer (LxMERT):
+Our final model, the "Learning Cross-Modality Encoder Representations," leverages the power of Transformers. This star of the show collaborates with three essential components: the language encoder, object relationship encoder, and the cross-modality encoder. Pre-trained with masked language modeling, these components facilitate alignment between captions and images. Two key sidekicks, Word-Level Sentence Embeddings and Object-Level Image Embeddings, employ attention mechanisms and Transformers to transform inputs into effective sequences. The cross-modality encoder serves as a cupid, aligning language and vision through self-attention, cross-attention, and Feed-forward layers, enhanced with residual connections and layer norms for stability. The model outputs language, vision, and cross-modality representations, blending them through Fully Connected layers to generate a softmax distribution over 3128 possible answers. This comprehensive approach ensures our Transformers excel at cross-modality matchmaking, achieving a successful union between language and vision in the realm of Visual Question Answering.</span></p>
+  <p><span style="font-weight: bold;"><ul>
+        <li>Achieved 57% accuracy with the baseline LSTM Question + norm image model with a VGGnet image embedding</li>
+        <li>Achieved 70.68% accuracy with the transformer-based LXMERT model for visual question answering on the VQA dataset.</li>
+</ul></span></p>
+
+
+ <p><span style="font-weight: bold;">
+              
+                </span></p>
+                   <p><span style="font-weight: bold;">Course: Deep Learning </span></p>
+                <p><span style="font-weight: bold;">University: Northeastern University</span></p>
+
+                  <div class="links">
+                         <a href="https://github.com/keshavbharadwaj/Visual-Question-Answering" target="_blank">
+                        <img class ="logo" src="{{ url_for('static', filename='images/github_logo_2.png')}}" alt="github logo" height="20">
+                        Github
+                    </a>
+
+                   <a href="{{url_for('static', filename='documents/deep_learning_report.pdf') }}" target="_blank">
+                        <img class = "logo" src= "{{ url_for('static', filename='images/pdf_logo.png')}}" alt="github logo" height="20">
+                        Report
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+
+
+</html>
+

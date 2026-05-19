@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #333; /* Darker background */
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #444; /* Darker background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 16px;
+            font-weight: bold;
+            outline: none;
+            border: 2px solid #4CAF50; /* Green */
+            position: relative;
+        }
+
+        button:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        button:hover {
+            transform: translate(0, -5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .subheading-container {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center; /* Center items vertically */
+        }
+
+        .logo {
+            width: 40px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 10px; /* Adjust the spacing between the logo and text */
+        }
+
+          .com_logo {
+            width: 200px; /* Adjust the width as needed */
+            height: 60px; /* Maintain aspect ratio */
+            margin-right: 20px; /* Adjust the spacing between the logo and text */
+            float: left;
+        }
+
+         .com2_logo {
+            width: 200px; /* Adjust the width as needed */
+            height:200px; /* Maintain aspect ratio */
+            margin-right: 20px; /* Adjust the spacing between the logo and text */
+            float: left;
+        }
+
+        .content {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .intro-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title-duration {
+            margin-bottom: 20px;
+        }
+
+        .intro-container p {
+            font-size: 18px;
+        }
+
+        /* Style for hyperlinks */
+        a {
+            color: #3498db; /* Dark blue color for hyperlinks */
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Work Experience</h1>
+    </header>
+
+    <button-container>
+        <button onclick="window.location.href='{{ url_for('home') }}'">Home</button>
+        <button onclick="window.location.href='{{ url_for('work') }}'">Work Experience</button>
+        <button onclick="window.location.href='{{ url_for('research') }}'">Research & Teaching Experience</button>
+        <button onclick="window.location.href='{{ url_for('projects') }}'">Projects</button>
+        <button onclick="window.location.href='{{ url_for('patents') }}'">Patents</button>
+    </button-container>
+
+    <section>
+        <div class="intro-container">
+            <p>
+                Explore my work experiences and achievements. Each section includes details about the role and responsibilities.
+            </p>
+        </div>
+
+        <!-- Work Experience 1 -->
+        <div class="subheading-container">
+            <div class="content">
+                <h2 align="center">1. Data Science Co-op: Abiomed Inc (Johnson & Johnson)</h2>
+                 <div class="title-duration">
+                    <p>Duration: <span style="font-weight: bold;">February 6th 2023 - September 1st 2023</span></p>
+                    <p>Location: <span style="font-weight: bold;">Danvers,MA,USA</span></p>
+                </div>
+                <img src="{{ url_for('static', filename='images/j_j_logo.png') }}" alt="Company Logo 1" class="com_logo" class="float-left">
+
+                <p>
+                     <ul>
+                      <li>Developed machine learning models to predict cardiac output in patients receiving mechanical circulatory support, utilizing in vivo highfrequency time-series device data obtained from pre-clinical and clinical experiments, achieving a 5.2% reduction in percentage error.</li>
+                      <li>Conducted research and implemented a Domain-Adversarial Neural Network (DANN) to forecast aortic pressure in different patient cohorts,
+leveraging computer simulations to generate high-volume data.</li>
+                      <li>Analyzed and fine-tuned the predicted probability values generated by a Deep Neural Network (DNN) model for predicting right heart
+failures to enhance the model's Brier skill score.</li>
+                    </ul>
+                </p>
+               
+            </div>
+        </div>
+         <img src="{{ url_for('static', filename='images/coop2.png') }}" alt="" class="ilightbox-photo" width="508" height="400" >
+
+        <!-- Work Experience 2 -->
+         <div class="subheading-container">
+            <div class="content">
+                <h2>2. Machine Learning Engineer: Mad Street Den </h2>
+                 <div class="title-duration">
+                     <p>Duration: <span style="font-weight: bold;">December 10th 2020 - July 28th 2021</span></p>
+                     <p>Location: <span style="font-weight: bold;">Chennai,TamilNadu,India</span></p>
+                </div>
+
+                <img src="{{ url_for('static', filename='images/mad_logo.jpg') }}" alt="Company Logo 1" class="com2_logo" class="float-left">
+                <p>
+                     <ul>
+                      <li>Developed and implemented machine learning models with PyTorch to generate tags for an Elastic search-driven recommendation system.</li>
+                      <li>Constructed indexing and search scripts, leveraging the generated tags, and fine-tuned the scoring function for improved optimization.</li>
+                      <li>Designed a Convolutional Neural Network (CNN) for vision-based tasks of identifying handwritten text and tables within images.</li>
+                      <li>Developed a language-based Support Vector Machine (SVM) classifier to distinguish between different question subjects and to categorize
+questions into either multiple-choice or other question types.</li>
+                      <li>Designed and implemented data processing pipelines for client data and tag storage across Redshift, S3, Dynamo, and Redis databases and
+optimized the pipeline by eliminating redundant operations and fine-tuning it, resulting in a 15% reduction in response time.</li>
+                    </ul>
+                </p>
+             
+            </div>
+        </div>
+         
+
+
+
+    </section>
+
+</body>
+</html>

@@ -3,37 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patents/Copyrights</title>
+    <title>Patents/copyrights</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #333; /* Darker background */
+            padding: 70px;
+            font-family: 'Comic Sans MS';
+            background-image: url("{{ url_for('static', filename='images/background.gif')}}");
             color: #fff;
+             justify-content: center;
+
         }
 
+
         header {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #4CAF50; /* Green */
+
+            padding: 10px;
+            /*background-color: #4CAF50; /* Green */
             color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
         }
 
         header h1 {
-            margin: 0;
+            color: #fff;
+            text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
         }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            background-color: #444; /* Darker background */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+        body h2 {
+            font-size: 40px;
+            text-align: center;
+
         }
 
+ 
+
+      
+
+
+        .caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        
+        }
+
+
+      
+         .container {
+
+                display: flex; /* Adjust the gap between image container and content */
+                flex-direction: column;
+                justify-content: center;
+
+            }
+
+
+
+
+        .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
+            margin-left: 20%;
+            marker-right:20%;
+          width: 60%;
+           height: 400px;
+          
+        }
+
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Adjust the styles as needed */
+
+
+     
+
+  
+        .content{
+            text-align: justify;
+            font-size: 25px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* Delay each image by adding animation delay */
+        .fade-in:nth-child(1) { animation-delay: 0.5s; }
+        .fade-in:nth-child(2) { animation-delay: 1s; }
+        .fade-in:nth-child(3) { animation-delay: 1.5s; }
+        .fade-in:nth-child(4) { animation-delay: 2s; }
+
+         .fa-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* Delay each image by adding animation delay */
+        .fa-in:nth-child(2) { animation-delay: 2s; }
+        
+    
+
+
+          .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 90px;
+            height: 140px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 20px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 14px;
+        }
+          .links {
+            margin-top: 10px;
+        }
+           img.logo {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+        }
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+
+     @media only screen and (max-width: 600px){
+        body {
+            padding: 0px;
+
+        } 
+
+        
+
+     
+        header {
+
+          padding: 10px;
+            font-size: 30px;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        body h2 {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+       
+        .content{
+            font-size: 13px;
+
+        }
+
+         .specific-image-inline {
+            /* Specific styling for the image with class "specific-image" */
+            margin-left: 0%;
+            marker-right:0%;
+          width: 100%;
+           height: 200px;
+          
+        }
+
+      
         button-container {
             display: flex;
             justify-content: space-evenly;
@@ -41,147 +220,122 @@
             margin-top: 20px;
         }
 
-        button {
-            background-color: #4CAF50; /* Green */
-            color: #fff;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            margin: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-size: 16px;
-            font-weight: bold;
-            outline: none;
-            border: 2px solid #4CAF50; /* Green */
+
+     
+          .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: relative;
         }
 
-        button:after {
-            content: '';
+        .rhombus {
+            width: 43px;
+            height: 72px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 8px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
             position: absolute;
-            top: 6px;
-            left: 6px;
-            right: 6px;
-            bottom: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            pointer-events: none;
-            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 8.6px;
+            font-family: 'Arial', sans-serif;
+            font-weight:bold;
         }
 
-        button:hover {
-            transform: translate(0, -5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
 
-        .subheading-container {
-            display: flex;
-            margin-bottom: 20px;
-        }
 
-        .content {
-            flex: 1;
-            margin-right: 20px;
-        }
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+}
 
-        .video {
-            flex: 1;
-            max-width: 100%;
-        }
 
-        .intro-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .intro-container p {
-            font-size: 18px;
-        }
-
-        /* Add more styles as needed */
-
-        @media (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
-            .subheading-container {
-                flex-direction: column;
-            }
-
-            .content,
-            .video {
-                margin-right: 0;
-            }
         }
     </style>
 </head>
 <body>
+        <header>
+    
+           <div class="rhombus-container" >
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
+                <div class="rhombus-text">Home</div>
+            </div>
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='{{ url_for('work') }}'">
+                <div class="rhombus-text">Work Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='{{ url_for('research') }}'">
+                <div class="rhombus-text">Research & Teaching Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='{{ url_for('projects') }}'">
+                <div class="rhombus-text">Projects</div>
+            </div>
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='{{ url_for('patents') }}'">
+                <div class="rhombus-text">Patents</div>
+            </div>
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='{{ url_for('education') }}'">
+                <div class="rhombus-text">Education</div>
+            </div>
+        </div>
 
-    <header>
-        <h1>Patents</h1>
+        <h1>Patents/Copyrights</h1>
+         
+       
     </header>
 
-    <button-container>
-       <button onclick="window.location.href='{{ url_for('home') }}'">Home</button>
-        <button onclick="window.location.href='{{ url_for('work') }}'">Work Experience</button>
-        <button onclick="window.location.href='{{ url_for('research') }}'">Research & Teaching Experience</button>
-        <button onclick="window.location.href='{{ url_for('projects') }}'">Projects</button>
-        <button onclick="window.location.href='{{ url_for('patents') }}'">Patents</button>
-    </button-container>
+    <div class="container">
 
-    <section>
-        <div class="intro-container">
-            <p> 
-                Check out my <a href="https://keshavbharadwaj.github.io/patents/" style="color: #3498db;">Patent/Copyright Certifications</a>.
-            </p>
-        </div>
+<div class="content">
+    <h2>Q-CerGen (Quick Certificate Generator)</h2>
+        <iframe class="specific-image-inline" src="https://www.youtube.com/embed/YXbtbqGVAAo" frameborder="10" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <p><span style="font-weight: bold;"> I innovatively crafted a solution for the swift generation of a significant volume of E-certificates, utilizing an Excel file and a certificate template. These certificates boast E-verification with a QR code implemented through the SHA algorithm. Leveraging OpenCV, I coded the application, and with Tkinter in Python, I designed a user-friendly interface. Additionally, I expanded the impact by developing the Q-CerGen website using Flask, and went a step further to create 3D E-trophies for participants using Brython and webGL.
 
-        <div class="subheading-container">
-            <div class="content">
-                <h2>Q-CerGen (Quick Certificate Generator)</h2>
-                <p>
-                    <ul>
-                      <li>A novel application to generate a substantial number of E-certificates quickly provided an Excel file and certificate template.</li>
-                      <li>Developed code using OpenCV and designed an innovative user interface using Tkinter, and Python.</li>
-                      <li>Created Q-CerGen website using Flask and also created 3D E-trophies for participants using Brython and webGL.</li>
-                    </ul>
+</span></p>
+
+<h2>ADAM (Automatic Disassemble and Assemble Machine)</h2>
+        <iframe class="specific-image-inline" src="https://www.youtube.com/embed/_Rwc4v6Phj4?si=61_0K6EoGZD2AQur" frameborder="10" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <p><span style="font-weight: bold;"> I engineered a prototype robotic pick-and-place arm with the ability to disassemble a pattern composed of basic blocks and reassemble it elsewhere. The project involved coding for object recognition and pattern mapping, employing the SIFT algorithm to dynamically map diverse blocks constituting a specific pattern. Additionally, I crafted a 3D graphical user interface (GUI) using OpenGL and Python for customizing patterns. To further enhance functionality, I integrated a machine learning model to assess the structural stability of the assembled patterns.
+
+</span></p>
+
+
+<p><span style="font-weight: bold;"> 
+        Check out my Patent/Copyright Certifications<a href="https://keshavbharadwaj.github.io/patents/" style="color: #3498db;">Here</a>.
+            </span></p>
 
 
 
-                </p>
-            </div>
-            <div class="video">
-                <!-- Replace the video URL with your actual video embed code -->
-                <iframe width="480" height="315" src="https://www.youtube.com/embed/YXbtbqGVAAo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div class="subheading-container">
-            <div class="content">
-                <h2>ADAM (Automatic Disassemble and Assemble Machine)</h2>
-                <p>
-                    <ul>
-                      <li>A robotic pick-and-place arm prototype capable of disassembling a pattern constructed from basic blocks or units and reassembling it in a different location.</li>
-                      <li>Developed code for object recognition as well as pattern mapping utilizing the SIFT algorithm to map various blocks forming a given
-                        pattern dynamically.</li>
-                      <li>Designed a 3D GUI for customizing patterns using OpenGL, and Python.</li>
-                      <li>Implemented a machine leanring model to analyze the structural stability of a given pattern.</li>
-                    </ul>
+              
+             
+                </div>
 
 
 
-                </p>
-            </div>
-            <div class="video">
-                <!-- Replace the video URL with your actual video embed code -->
-                <iframe width="480" height="315" src="https://www.youtube.com/embed/_Rwc4v6Phj4?si=61_0K6EoGZD2AQur" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
+  
 
-    <!-- Add more sections for additional patents -->
+
+
 
 </body>
+
+
 </html>
