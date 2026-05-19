@@ -14,7 +14,7 @@
         body {
             padding: 70px;
             font-family: 'Comic Sans MS';
-            background-image: url("{{ url_for('static', filename='images/background.gif')}}");
+            background-image: url("../static/images/background.gif");
             color: #fff;
              justify-content: center;
 
@@ -356,22 +356,22 @@
         
          
            <div class="rhombus-container" >
-            <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='index.html'">
                 <div class="rhombus-text">Home</div>
             </div>
-            <div class="rhombus" id="rhombus2" onclick="window.location.href='{{ url_for('work') }}'">
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='work_experience.html'">
                 <div class="rhombus-text">Work Experience</div>
             </div>
-            <div class="rhombus" id="rhombus3" onclick="window.location.href='{{ url_for('research') }}'">
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='research_experience.html'">
                 <div class="rhombus-text">Research & Teaching Experience</div>
             </div>
-            <div class="rhombus" id="rhombus4" onclick="window.location.href='{{ url_for('projects') }}'">
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='projects.html'">
                 <div class="rhombus-text">Projects</div>
             </div>
-            <div class="rhombus" id="rhombus5" onclick="window.location.href='{{ url_for('patents') }}'">
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='patents.html'">
                 <div class="rhombus-text">Patents</div>
             </div>
-            <div class="rhombus" id="rhombus6" onclick="window.location.href='{{ url_for('education') }}'">
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='education.html'">
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
@@ -384,45 +384,45 @@
 
         <div class="stacked-images">
             <div class="fade-in">
-                <img src="{{ url_for('static', filename='images/seg_4.png')}}" alt="Image 1">
+                <img src="../static/images/seg_4.png" alt="Image 1">
                 
             </div>
 
             <div class="fade-in">
-                <img  src="{{ url_for('static', filename='images/seg_3.png')}}" alt="Image 2">
+                <img  src="../static/images/seg_3.png" alt="Image 2">
                 <p class="caption">Filtering + Masking</p>
                 
             </div>
 
             <div class="fade-in">
-                <img  src="{{ url_for('static', filename='images/seg_2.png')}}" alt="Image 3">
+                <img  src="../static/images/seg_2.png" alt="Image 3">
                 <p class="caption">Segmentation mask</p>
             </div>
 
             <div class="fade-in">
-                <img  src="{{ url_for('static', filename='images/seg_1.png')}}" alt="Image 4">
+                <img  src="../static/images/seg_1.png" alt="Image 4">
                 <p class="caption">YOLO 2D Object Detection</p>
             </div>
 
         </div>
 
          <div class="fad-in">
-            <img  class = "specific-image" src="{{ url_for('static', filename='images/seg_5.png')}}" alt="Image 5">
+            <img  class = "specific-image" src="../static/images/seg_5.png" alt="Image 5">
             <p class="caption">Pillar Feature Net</p>
         </div>
 
          <div class="fad-in">
-            <img class = "specific-image" src="{{ url_for('static', filename='images/seg_6.png')}}" alt="Image 6">
+            <img class = "specific-image" src="../static/images/seg_6.png" alt="Image 6">
             <p class="caption">Pseudo Image Generation</p>
         </div>
 
         <div class="fad-in">
-            <img class = "specific-image" src="{{ url_for('static', filename='images/seg_7.png')}}" alt="Image 7">
+            <img class = "specific-image" src="../static/images/seg_7.png" alt="Image 7">
             <p class="caption">Backbone + Detection Head</p>
         </div>
 
          <div class="fad-in">
-            <img class = "specific-image" src="{{ url_for('static', filename='images/seg_8.png')}}" alt="Image 8">
+            <img class = "specific-image" src="../static/images/seg_8.png" alt="Image 8">
             <p class="caption">3D Bounding Box Prediction</p>
         </div>
 
@@ -435,7 +435,7 @@
              <p><span style="font-weight: bold;"> Intuition: 2D image recognition tasks like object detection and instance segmentation, have made significant strides lately but beyond obtaining 2D bounding boxes or pixel masks, 3D comprehension is avidly sought in many major applications including autonomous driving and augmented reality.</span></p>
 
     </div>
-    <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/frustum.png')}}" alt="Image 8">
+    <img  class = "specific-image-inline" src="../static/images/frustum.png" alt="Image 8">
     <div class="content">
 
              <p><span style="font-weight: bold;"> Approach: In light of this, there is an increasing demand for 3D object detection models that classify accurately and estimate the oriented 3D bounding boxes of actual objects using multi-sensor data. This work develops on top of Frustum PointPillar by leveraging robust 2D object detectors as priors to build a 3D viewing frustum that predicts a 3D bounding box of the object from the points in the frustum. </span></p>
@@ -446,7 +446,7 @@
                       <li>The future scope of this work is to improve 2D detection in low-light conditions using data from RGB and LiDAR and to avoid outliers, it is essential to remove reflections in surfaces such as glasses and windows.</li>
                 </ul></p>
     </div>
-       <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/birds_eye_view.png')}}" alt="Image 8">
+       <img  class = "specific-image-inline" src="../static/images/birds_eye_view.png" alt="Image 8">
        <div class="content">
             <p>SegMask FP model output visualized in KITTI-hard dataset for cars that shows 3D bounding boxes on 2D image and this is also the bird's eye view for the same.</p>
                 <p>Course: <span style="font-weight: bold;"><i> Advanced Computer Vision </i> </span></p>
@@ -456,12 +456,12 @@
                 
                  <div class="links">
                       <a href="https://github.com/keshavbharadwaj/frustum_pointnets_pytorch" target="_blank">
-                        <img class ="logo" src="{{ url_for('static', filename='images/github_logo_2.png')}}"  alt="github logo" height="20">
+                        <img class ="logo" src="../static/images/github_logo_2.png"  alt="github logo" height="20">
                         Github
                     </a>
 
-                   <a href="{{url_for('static', filename='documents/seg_mask_frustum_point_pillar.pdf') }}" target="_blank">
-                        <img class = "logo" src="{{ url_for('static', filename='images/pdf_logo.png')}}"  alt="github logo" height="20">
+                   <a href="../static/documents/seg_mask_frustum_point_pillar.pdf" target="_blank">
+                        <img class = "logo" src="../static/images/pdf_logo.png"  alt="github logo" height="20">
                         Report
                     </a>
                 </div>

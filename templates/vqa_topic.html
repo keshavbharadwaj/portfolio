@@ -8,7 +8,7 @@
         body {
             padding: 70px;
             font-family: 'Comic Sans MS';
-            background-image: url("{{ url_for('static', filename='images/background.gif')}}");
+            background-image: url("../static/images/background.gif");
             color: #fff;
              justify-content: center;
 
@@ -278,22 +278,22 @@
         <header>
     
            <div class="rhombus-container" >
-            <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='index.html'">
                 <div class="rhombus-text">Home</div>
             </div>
-            <div class="rhombus" id="rhombus2" onclick="window.location.href='{{ url_for('work') }}'">
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='work_experience.html'">
                 <div class="rhombus-text">Work Experience</div>
             </div>
-            <div class="rhombus" id="rhombus3" onclick="window.location.href='{{ url_for('research') }}'">
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='research_experience.html'">
                 <div class="rhombus-text">Research & Teaching Experience</div>
             </div>
-            <div class="rhombus" id="rhombus4" onclick="window.location.href='{{ url_for('projects') }}'">
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='projects.html'">
                 <div class="rhombus-text">Projects</div>
             </div>
-            <div class="rhombus" id="rhombus5" onclick="window.location.href='{{ url_for('patents') }}'">
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='patents.html'">
                 <div class="rhombus-text">Patents</div>
             </div>
-            <div class="rhombus" id="rhombus6" onclick="window.location.href='{{ url_for('education') }}'">
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='education.html'">
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
@@ -308,8 +308,8 @@
 
         <div class="stacked-images">
             <div class="fade-in">
-                <img src= "{{ url_for('static', filename='images/vqa_1.png')}}"  alt="Image 1">
-                <img  src="{{ url_for('static', filename='images/vqa_2.png')}}" alt="Image 2">
+                <img src= "../static/images/vqa_1.png"  alt="Image 1">
+                <img  src="../static/images/vqa_2.png" alt="Image 2">
                 
             </div>
                 
@@ -318,8 +318,8 @@
         <div class="fade-in">
         <div class="stacked-images">
             
-                <img class = "specific-image2" src= "{{ url_for('static', filename='images/vqa_3.png')}}"  alt="Image 1">
-                <img class = "specific-image2" src="{{ url_for('static', filename='images/vqa_4.png')}}"  alt="Image 2">
+                <img class = "specific-image2" src= "../static/images/vqa_3.png"  alt="Image 1">
+                <img class = "specific-image2" src="../static/images/vqa_4.png"  alt="Image 2">
                 
                 
             </div>
@@ -328,14 +328,14 @@
 
 
          <div class="fade-in">
-            <img  class = "specific-image" src= "{{ url_for('static', filename='images/vqa_5.png')}}" alt="Image 5">
+            <img  class = "specific-image" src= "../static/images/vqa_5.png" alt="Image 5">
         </div>
 
         <div class="fade-in">
         <div class="stacked-images">
             
-                <img src="{{ url_for('static', filename='images/vqa_6.png')}}" alt="Image 1">
-                <img  src="{{ url_for('static', filename='images/vqa_7.png')}}"  alt="Image 2">
+                <img src="../static/images/vqa_6.png" alt="Image 1">
+                <img  src="../static/images/vqa_7.png"  alt="Image 2">
                 
             </div>
 
@@ -345,7 +345,7 @@
 
 
     <div class="fa-in">
-     <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/vqa_base_line.png')}}" alt="Image 8">
+     <img  class = "specific-image-inline" src="../static/images/vqa_base_line.png" alt="Image 8">
     <div class="content">
              <p><span style="font-weight: bold;">Aim: The goal of a Visual Question Answering (VQA) system is to empower machines with the capability to comprehend and respond to natural language questions about visual content, seamlessly integrating computer vision for image understanding and natural language processing (NLP) for effective communication.</span></p>
               <p><span style="font-weight: bold;">
@@ -354,7 +354,7 @@
 </div>
 </div>
 <div class= "fa-in"> 
-  <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/lxmert_architecture.png')}}" alt="Image 8">
+  <img  class = "specific-image-inline" src="../static/images/lxmert_architecture.png" alt="Image 8">
  <div class="content">
        <p><span style="font-weight: bold;">Transformer Model: Learning Cross-Modality Encoder Representations From Transformer (LxMERT):
 Our final model, the "Learning Cross-Modality Encoder Representations," leverages the power of Transformers. This star of the show collaborates with three essential components: the language encoder, object relationship encoder, and the cross-modality encoder. Pre-trained with masked language modeling, these components facilitate alignment between captions and images. Two key sidekicks, Word-Level Sentence Embeddings and Object-Level Image Embeddings, employ attention mechanisms and Transformers to transform inputs into effective sequences. The cross-modality encoder serves as a cupid, aligning language and vision through self-attention, cross-attention, and Feed-forward layers, enhanced with residual connections and layer norms for stability. The model outputs language, vision, and cross-modality representations, blending them through Fully Connected layers to generate a softmax distribution over 3128 possible answers. This comprehensive approach ensures our Transformers excel at cross-modality matchmaking, achieving a successful union between language and vision in the realm of Visual Question Answering.</span></p>
@@ -372,12 +372,12 @@ Our final model, the "Learning Cross-Modality Encoder Representations," leverage
 
                   <div class="links">
                          <a href="https://github.com/keshavbharadwaj/Visual-Question-Answering" target="_blank">
-                        <img class ="logo" src="{{ url_for('static', filename='images/github_logo_2.png')}}" alt="github logo" height="20">
+                        <img class ="logo" src="../static/images/github_logo_2.png" alt="github logo" height="20">
                         Github
                     </a>
 
-                   <a href="{{url_for('static', filename='documents/deep_learning_report.pdf') }}" target="_blank">
-                        <img class = "logo" src= "{{ url_for('static', filename='images/pdf_logo.png')}}" alt="github logo" height="20">
+                   <a href="../static/documents/deep_learning_report.pdf" target="_blank">
+                        <img class = "logo" src= "../static/images/pdf_logo.png" alt="github logo" height="20">
                         Report
                     </a>
                 </div>

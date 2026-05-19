@@ -8,7 +8,7 @@
         body {
             padding: 70px;
             font-family: 'Comic Sans MS';
-            background-image: url("{{ url_for('static', filename='images/background.gif')}}");
+            background-image: url("../static/images/background.gif");
             color: #fff;
              justify-content: center;
 
@@ -410,22 +410,22 @@
         
          
    <div class="rhombus-container" >
-            <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='index.html'">
                 <div class="rhombus-text">Home</div>
             </div>
-            <div class="rhombus" id="rhombus2" onclick="window.location.href='{{ url_for('work') }}'">
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='work_experience.html'">
                 <div class="rhombus-text">Work Experience</div>
             </div>
-            <div class="rhombus" id="rhombus3" onclick="window.location.href='{{ url_for('research') }}'">
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='research_experience.html'">
                 <div class="rhombus-text">Research & Teaching Experience</div>
             </div>
-            <div class="rhombus" id="rhombus4" onclick="window.location.href='{{ url_for('projects') }}'">
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='projects.html'">
                 <div class="rhombus-text">Projects</div>
             </div>
-            <div class="rhombus" id="rhombus5" onclick="window.location.href='{{ url_for('patents') }}'">
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='patents.html'">
                 <div class="rhombus-text">Patents</div>
             </div>
-            <div class="rhombus" id="rhombus6" onclick="window.location.href='{{ url_for('education') }}'">
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='education.html'">
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
@@ -454,13 +454,13 @@
   
     <div class="content">
           <div class="fade-in">
-        <img  class = "specific-image-inline" src="{{ url_for('static', filename='images/cobra_ball.png')}}" alt="Image 8">
+        <img  class = "specific-image-inline" src="../static/images/cobra_ball.png" alt="Image 8">
 
       <p><span style="font-weight: bold;"> 
 COBRA, the Crater Observing Bio-inspired Rolling Articulator, stands as a pioneering snake-inspired rover designed for lunar exploration, distinguished by the prestigious Artemis Award. Embracing a rolling articulator chassis inspired by biological sidewinding and tumbling movements, COBRA pushes the boundaries of lunar exploration.</span></p>
 </div>
 <div class="fade-in">
-<img  class = "specific-image-inline" src="{{ url_for('static', filename='images/cobra_model.png')}}" alt="Image 8">
+<img  class = "specific-image-inline" src="../static/images/cobra_model.png" alt="Image 8">
 
 <p><span style="font-weight: bold;"> 
 My team introduced perception domain to COBRA, marking the initiation of a comprehensive data collection effort. Utilizing label studio for ground truth establishment, we embarked on developing a baseline segmentation model. Leveraging existing high-performance segmentation models, enhanced by our smoothing function, we optimized accuracy. The models were pre-trained on ImageNet1K and fine-tuned on MIT's ADE20K dataset, the largest open-source dataset for semantic segmentation.
@@ -470,7 +470,7 @@ My team introduced perception domain to COBRA, marking the initiation of a compr
 <p><span style="font-weight: bold;">
 The baseline model underwent deployment into the Jetson Orin, fortified by post-training optimization techniques employing OpenVINO and TensorRT. This strategic implementation resulted in a notable 2x reduction in memory usage and inference time for deployed vision models. Demonstrating a keen understanding of model performance metrics, we achieved a commendable accuracy with a 0.78 IoU score for the ground class.
 </span></p>
-<img  class = "specific-image-inline"   src="{{ url_for('static', filename='images/openvino.png')}}", alt="Image 8">
+<img  class = "specific-image-inline"   src="../static/images/openvino.png" alt="Image 8">
 </div>
 <p><span style="font-weight: bold;"> 
 The current focus lies in the implementation and fine-tuning of state-of-the-art instance segmentation models. Notably, efforts are underway to incorporate models like Mask2Former and YOSO (You Only Segment Once) into COBRA. 
@@ -487,12 +487,12 @@ The current focus lies in the implementation and fine-tuning of state-of-the-art
                 
                  <div class="links">
                       <a href="https://github.com/keshavbharadwaj/COBRA" target="_blank">
-                        <img class="logo" src="{{ url_for('static', filename='images/github_logo_2.png') }}" alt="github logo" height="20">
+                        <img class="logo" src="../static/images/github_logo_2.png" alt="github logo" height="20">
                         Github
                     </a>
 
-                   <a href="{{url_for('static', filename='documents/COBRA_final_report.pdf') }}" target="_blank">
-                        <img class= "logo" src="{{ url_for('static', filename='images/pdf_logo.png') }}" alt="github logo" height="20">
+                   <a href="../static/documents/COBRA_final_report.pdf" target="_blank">
+                        <img class= "logo" src="../static/images/pdf_logo.png" alt="github logo" height="20">
                         Report
                     </a>
                 </div>

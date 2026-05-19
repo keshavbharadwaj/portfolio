@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Patents/copyrights</title>
     <style>
         body {
             padding: 70px;
             font-family: 'Comic Sans MS';
-            background-image: url("{{ url_for('static', filename='images/background.gif')}}");
+            background-image: url("../static/images/background.gif");
             color: #fff;
              justify-content: center;
 
@@ -277,22 +278,22 @@
         <header>
     
            <div class="rhombus-container" >
-            <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='index.html'">
                 <div class="rhombus-text">Home</div>
             </div>
-            <div class="rhombus" id="rhombus2" onclick="window.location.href='{{ url_for('work') }}'">
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='work_experience.html'">
                 <div class="rhombus-text">Work Experience</div>
             </div>
-            <div class="rhombus" id="rhombus3" onclick="window.location.href='{{ url_for('research') }}'">
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='research_experience.html'">
                 <div class="rhombus-text">Research & Teaching Experience</div>
             </div>
-            <div class="rhombus" id="rhombus4" onclick="window.location.href='{{ url_for('projects') }}'">
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='projects.html'">
                 <div class="rhombus-text">Projects</div>
             </div>
-            <div class="rhombus" id="rhombus5" onclick="window.location.href='{{ url_for('patents') }}'">
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='patents.html'">
                 <div class="rhombus-text">Patents</div>
             </div>
-            <div class="rhombus" id="rhombus6" onclick="window.location.href='{{ url_for('education') }}'">
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='education.html'">
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
@@ -306,13 +307,14 @@
 
 <div class="content">
     <h2>Q-CerGen (Quick Certificate Generator)</h2>
-        <iframe class="specific-image-inline" src="https://www.youtube.com/embed/YXbtbqGVAAo" frameborder="10" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- src set by script: YouTube embeds require a real https origin & origin= param -->
+        <iframe class="specific-image-inline youtube-embed" data-embed-src="https://www.youtube.com/embed/YXbtbqGVAAo" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" title="Q-CerGen (Quick Certificate Generator) demo video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
        <p><span style="font-weight: bold;"> I innovatively crafted a solution for the swift generation of a significant volume of E-certificates, utilizing an Excel file and a certificate template. These certificates boast E-verification with a QR code implemented through the SHA algorithm. Leveraging OpenCV, I coded the application, and with Tkinter in Python, I designed a user-friendly interface. Additionally, I expanded the impact by developing the Q-CerGen website using Flask, and went a step further to create 3D E-trophies for participants using Brython and webGL.
 
 </span></p>
 
 <h2>ADAM (Automatic Disassemble and Assemble Machine)</h2>
-        <iframe class="specific-image-inline" src="https://www.youtube.com/embed/_Rwc4v6Phj4?si=61_0K6EoGZD2AQur" frameborder="10" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="specific-image-inline youtube-embed" data-embed-src="https://www.youtube.com/embed/_Rwc4v6Phj4?si=61_0K6EoGZD2AQur" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" title="ADAM (Automatic Disassemble and Assemble Machine) demo video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
        <p><span style="font-weight: bold;"> I engineered a prototype robotic pick-and-place arm with the ability to disassemble a pattern composed of basic blocks and reassemble it elsewhere. The project involved coding for object recognition and pattern mapping, employing the SIFT algorithm to dynamically map diverse blocks constituting a specific pattern. Additionally, I crafted a 3D graphical user interface (GUI) using OpenGL and Python for customizing patterns. To further enhance functionality, I integrated a machine learning model to assess the structural stability of the assembled patterns.
 
 </span></p>
@@ -334,6 +336,36 @@
 
 
 
+
+<script>
+(function () {
+  /** YouTube rejects embeds (Error 153) without referrer + identifiable origin — see README. */
+  function setupYouTubeEmbeds () {
+    var list = document.querySelectorAll('iframe.youtube-embed[data-embed-src]');
+    list.forEach(function (iframe) {
+      var raw = iframe.getAttribute('data-embed-src');
+      if (!raw) return;
+      try {
+        var u = new URL(raw, window.location.href);
+        u.hostname = 'www.youtube-nocookie.com';
+        u.protocol = 'https:';
+        u.searchParams.set('enablejsapi', '1');
+        u.searchParams.set('playsinline', '1');
+        u.searchParams.set('rel', '0');
+        u.searchParams.set('modestbranding', '1');
+        if (location.protocol !== 'file:' && location.origin) {
+          u.searchParams.set('origin', location.origin);
+        }
+        iframe.src = u.toString();
+      } catch (e) {
+        iframe.src = raw;
+      }
+    });
+  }
+
+  setupYouTubeEmbeds();
+})();
+</script>
 
 </body>
 

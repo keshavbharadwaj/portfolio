@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keshav Bharadwaj Vaidyanathan</title>
+    <style>
+      body {
+            padding: 70px;
+            font-family: 'Comic Sans MS';
+            background-image: url("../static/images/background.gif");
+            color: #fff;
+             justify-content: center;
+             text-align: center;
+
+        }
+
+
+
+       header {
+
+            padding: 10px;
+            /*background-color: #4CAF50; /* Green */
+            color: #fff;
+              font-size: 35px;
+              justify-content: center;
+              text-align: center;
+        }
+
+        header h1 {
+            color: #fff;
+            text-decoration: none;
+            font-family: "Comic Sans MS";
+
+
+        }
+          body h2 {
+            font-size: 40px;
+            text-align: center;
+
+        }
+
+        header p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+
+        img {
+            max-width: 290px; /* Adjust the size as needed */
+            height: auto;
+            margin-right: 10px;
+            justify-content: center;
+            /*border-radius: 50%; */
+            margin-bottom: 10px;
+            border: 0px solid #4CAF50; /* Green */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img.logo {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+            display:inline-block;
+        }
+
+          img.logo2 {
+            max-width: 40px; /* Adjust the size as needed */
+            max-height: 40px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+            display:inline-block;
+            filter:invert(1);
+        }
+
+        .bottom-right-links {
+            position: flex;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+
+        }
+
+        .content-section {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to improve text readability */
+         
+
+        }
+
+        
+        .content{
+            text-align: justify;
+            font-size: 25px;
+            background-color: rgba(0, 0, 0, 0.5);
+
+        }
+
+
+
+          .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 90px;
+            height: 140px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 20px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 14px;
+        }
+
+
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+
+
+        /* Add more styles as needed */
+
+     .neon-light {
+      position: relative;
+      display: inline-block;
+      margin: 20px;
+    }
+
+    .neon-light img {
+      max-width: 100px;
+      height: auto;
+      display: block;
+    }
+
+    .neon-light::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      background: linear-gradient(45deg, #009688, #4CAF50);
+      z-index: -1;
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .neon-light:hover::before {
+      opacity: 1;
+    }
+    .connect {
+        margin-right:2%;
+        margin-bottom: 0;
+    }
+
+
+ @media only screen and (max-width: 600px){
+         body {
+            padding: 0px;
+
+        } 
+
+        
+
+     
+        header {
+
+          padding: 10px;
+            font-size: 30px;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+       
+        .content{
+            font-size: 13px;
+
+        }
+
+
+        img {
+            max-width: 250px; /* Adjust the size as needed */
+            max-height: 250px;
+            margin-right: 5px;
+            /*border-radius: 50%; */
+            margin-bottom: 10px;
+            border: 0px solid #4CAF50; /* Green */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img.logo {
+            max-width: 20px; /* Adjust the size as needed */
+            max-height: 20px; /* Adjust the size as needed */
+            margin-bottom: 2px;
+        }
+
+        .bottom-right-links {
+            position: flex;
+            bottom:20px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+        }
+
+        button-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .content-section {
+           
+            padding: 0px;
+            font-size: 13px;
+
+        }
+
+        .connect {
+        margin-right:10%;
+        margin-bottom: 0;
+    }
+
+
+    .rhombus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .rhombus {
+            width: 43px;
+            height: 72px;
+            background-color: #673ab7; /* Deep Orange */
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 8px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #e64a19; /* Darker Deep Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rhombus:hover {
+            background-color: #d84315; /* Darker Deep Orange on hover */
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .rhombus .rhombus-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: #fff;
+            font-size: 8.6px;
+            font-family: 'Arial', sans-serif;
+            font-weight:bold;
+        }
+
+
+
+        a:link, a:visited{
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+}
+
+
+    </style>
+</head>
+<body>
+        <header>
+    
+        
+         
+          <div class="rhombus-container" >
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='index.html'">
+                <div class="rhombus-text">Home</div>
+            </div>
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='work_experience.html'">
+                <div class="rhombus-text">Work Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='research_experience.html'">
+                <div class="rhombus-text">Research & Teaching Experience</div>
+            </div>
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='projects.html'">
+                <div class="rhombus-text">Projects</div>
+            </div>
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='patents.html'">
+                <div class="rhombus-text">Patents</div>
+            </div>
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='education.html'">
+                <div class="rhombus-text">Education</div>
+            </div>
+        </div>
+       <h1>Keshav Bharadwaj Vaidyanathan</h1>
+    </header>
+
+   <div class="content-section">
+        <img  src="../static/images/dp_painted.png" alt="Your Circular Photo Placeholder" alt="Section Image">
+        <div class="content">
+              <p><span style="font-weight: bold;"> Welcome to my portfolio, where technology meets innovation, and a passion for solving complex challenges drives my journey. As a highly motivated and results-driven Computer Engineer with a Master's degree in Computer Engineering, my expertise spans the realms of data science, machine learning, computer vision, and robotics. With hands-on experience as a Data Science Co-op at Abiomed Inc (Johnson & Johnson) and a Machine Learning Engineer at Mad Street Den, I have honed my skills in developing predictive models, optimizing algorithms, and contributing to cutting-edge technologies. </span></p>
+            <!-- Add more content as needed -->
+            <h2>Skills</h2>
+            <h3>Machine Learning/ Deep Learning</h3>
+
+
+            
+           
+
+            <div class="neon-light">
+            <img class="logo" src=  "../static/images/python-svgrepo-com.svg" caption="python" alt="LinkedIn Logo">
+            <caption>Python</caption>
+               
+            </div>
+
+            <div class="neon-light">
+            <img class="logo" src=  "../static/images/pytorch-svgrepo-com.svg"  alt="LinkedIn Logo">
+            <caption>Pytorch</caption>
+               
+            </div>
+            <div class="neon-light">
+             <img class="logo" src=  "../static/images/Keras.svg"  alt="LinkedIn Logo">
+            <caption>keras</caption>
+               
+            </div>
+            <div class="neon-light">
+           <img class="logo" src=  "../static/images/opencv-svgrepo-com.svg"  alt="LinkedIn Logo">
+            <caption>OpenCV</caption>
+               
+            </div>
+            <div class="neon-light">
+             <img class="logo" src=  "../static/images/scikit-learn.svg"  alt="LinkedIn Logo">
+            <caption>Scikit-Learn</caption>
+               
+            </div>
+
+               <div class="neon-light">
+            <img class="logo" src=  "../static/images/Matplotlib.svg" caption="python" alt="LinkedIn Logo">
+            <caption>Matplotlib</caption>
+               
+            </div>
+               <div class="neon-light">
+            <img class="logo2" src=  "../static/images/Pandas.svg" caption="python" alt="LinkedIn Logo">
+            <caption>Pandas</caption>
+               
+            </div>
+
+
+            <h3>Backend</h3>
+
+             <div class="neon-light">
+            <img class="logo" src=  "../static/images/aws-svgrepo-com.svg" caption="python" alt="LinkedIn Logo">
+            <caption>AWS</caption>
+               
+            </div>
+
+             <div class="neon-light">
+            <img class="logo" src=  "../static/images/docker-svgrepo-com.svg" caption="python" alt="LinkedIn Logo">
+            <caption>Docker</caption>
+               
+            </div>
+
+             <div class="neon-light">
+            <img class="logo" src=  "../static/images/sql-database-sql-azure-svgrepo-com.svg" caption="python" alt="LinkedIn Logo">
+            <caption>SQL</caption>
+               
+            </div>
+
+
+
+           
+
+              <div class="neon-light">
+            <img class="logo" src=  "../static/images/mongodb-svgrepo-com.svg" caption="python" alt="LinkedIn Logo">
+            <caption>MongoDB</caption>
+               
+            </div>
+
+               <div class="neon-light">
+            <img class="logo" src=  "../static/images/Elastic%20Search.svg" caption="python" alt="LinkedIn Logo">
+            <caption>Elastic</caption>
+               
+            </div>
+            
+             <div class="neon-light">
+            <img class="logo2" src=  "../static/images/flask-svgrepo-com.svg" caption="python" alt="LinkedIn Logo">
+            <caption>Flask</caption>
+               
+            </div>
+
+                <div class="neon-light">
+            <img class="logo" src=  "../static/images/html-svgrepo-com.svg" caption="python" alt="LinkedIn Logo">
+            <caption>HTML</caption>
+               
+            </div>
+
+              <div class="neon-light">
+            <img class="logo" src=  "../static/images/CSS.svg" caption="python" alt="LinkedIn Logo">
+            <caption>CSS</caption>
+               
+            </div>
+
+
+             <h3>Other Tools</h3>
+
+             <div class="neon-light">
+            <img class="logo" src=  "../static/images/verilog-svgrepo-com.svg" caption="python" alt="LinkedIn Logo">
+            <caption>Verilog</caption>
+               
+            </div>
+
+               <div class="neon-light">
+            <img class="logo2" src=  "../static/images/latex-svgrepo-com.svg" caption="python" alt="LinkedIn Logo">
+            <caption>Latex</caption>
+               
+            </div>
+
+                <div class="neon-light">
+            <img class="logo" src=  "../static/images/opengl-svgrepo-com.svg" caption="python" alt="LinkedIn Logo">
+            <caption>OpenGL</caption>
+               
+            </div>
+
+
+            
+
+
+            
+
+               <div class="bottom-right-links">
+
+                <br>
+                <p class="connect"><u> Connect with me at:                </u></p>
+                <p> 
+                
+                 <a href="mailto:bharadwajvaidyanat.k@northeastern.edu"><img class="logo" src="../static/images/email_logo.jpg" alt="../static/images/email_logo.png"></a>
+
+                <a href="https://www.linkedin.com/in/keshav-bharadwaj/" target="_blank">
+                    <img class="logo" src=  "../static/images/linkedin_logo.png"  alt="LinkedIn Logo">
+                </a>
+
+                <a href="https://github.com/keshavbharadwaj" target="_blank"><img class="logo" src="../static/images/github_logo.png" alt="GitHub Logo"></a>
+
+                 <a href="../static/documents/Resume.pdf" target="_blank">
+                    <img class="logo" src=  "../static/images/resume-logo.png"  alt="LinkedIn Logo">
+                </a>
+                
+               
+                
+            
+      
+           
+             
+            
+        </p>
+                </div>
+
+         
+   
+    
+        </div>
+        
+
+
+        
+        
+
+
+
+    </div>
+
+
+
+
+
+    
+
+    <!-- Add more sections for Work Experience, Projects, Patents, Technical Skills, etc. -->
+
+</body>
+
+
+</html>

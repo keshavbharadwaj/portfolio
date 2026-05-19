@@ -8,7 +8,7 @@
             body {
             padding: 70px;
             font-family: 'Comic Sans MS';
-            background-image: url("{{ url_for('static', filename='images/background.gif')}}");
+            background-image: url("../static/images/background.gif");
             color: #fff;
              justify-content: center;
 
@@ -298,22 +298,22 @@
     
        
                    <div class="rhombus-container" >
-            <div class="rhombus" id="rhombus1" onclick="window.location.href='{{ url_for('home') }}'">
+            <div class="rhombus" id="rhombus1" onclick="window.location.href='index.html'">
                 <div class="rhombus-text">Home</div>
             </div>
-            <div class="rhombus" id="rhombus2" onclick="window.location.href='{{ url_for('work') }}'">
+            <div class="rhombus" id="rhombus2" onclick="window.location.href='work_experience.html'">
                 <div class="rhombus-text">Work Experience</div>
             </div>
-            <div class="rhombus" id="rhombus3" onclick="window.location.href='{{ url_for('research') }}'">
+            <div class="rhombus" id="rhombus3" onclick="window.location.href='research_experience.html'">
                 <div class="rhombus-text">Research & Teaching Experience</div>
             </div>
-            <div class="rhombus" id="rhombus4" onclick="window.location.href='{{ url_for('projects') }}'">
+            <div class="rhombus" id="rhombus4" onclick="window.location.href='projects.html'">
                 <div class="rhombus-text">Projects</div>
             </div>
-            <div class="rhombus" id="rhombus5" onclick="window.location.href='{{ url_for('patents') }}'">
+            <div class="rhombus" id="rhombus5" onclick="window.location.href='patents.html'">
                 <div class="rhombus-text">Patents</div>
             </div>
-            <div class="rhombus" id="rhombus6" onclick="window.location.href='{{ url_for('education') }}'">
+            <div class="rhombus" id="rhombus6" onclick="window.location.href='education.html'">
                 <div class="rhombus-text">Education</div>
             </div>
         </div>
@@ -324,21 +324,21 @@
 
 
     <div class="content-section">
-        <div class="image-button"  onclick="window.location.href='{{ url_for('seg_mask') }}'">
+        <div class="image-button"  onclick="window.location.href='segmask_topic.html'">
             <a href="#">
-                <img src="{{ url_for('static', filename='images/seg_mask_topic.png')}}" alt="Image 1"> 
+                <img src="../static/images/seg_mask_topic.png" alt="Image 1"> 
             </a>
             <div class="caption">SegMask Frustum Point Pillar for 3D object detection</div>
         </div>
-        <div class="image-button"  onclick="window.location.href='{{ url_for('vqa') }}'">
+        <div class="image-button"  onclick="window.location.href='vqa_topic.html'">
             <a href="#">
-                <img src= "{{ url_for('static', filename='images/visual_question_answering_topic.jpg')}}" alt="Image 2">
+                <img src= "../static/images/visual_question_answering_topic.jpg" alt="Image 2">
             </a>
             <div class="caption">Visual Question Answering</div>
         </div>
-        <div class="image-button"  onclick="window.location.href='{{ url_for('qa') }}'">
+        <div class="image-button"  onclick="window.location.href='qa_topic.html'">
             <a href="#">
-                <img src="{{ url_for('static', filename='images/question_answer_topic.png')}}" alt="Image 3">
+                <img src="../static/images/question_answer_topic.png" alt="Image 3">
             </a>
             <div class="caption">Question Answering System</div>
         </div>
